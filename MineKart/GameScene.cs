@@ -10,7 +10,7 @@ namespace MineKart
 {
     public class GameScene : Scene
     {
-        private GameObjectCollection GameObjects { get; set; }
+        public GameObjectCollection GameObjects { get; set; }
 
         public GameScene()
         {
@@ -22,6 +22,9 @@ namespace MineKart
         {
             GameObjects = new GameObjectCollection();
 
+            // Make the game object collection available to other interested parties
+            ServiceLocator.Instance.ProvideService<GameObjectCollection>(GameObjects);
+
             GameObject player = InitializePlayer();
             GameObjects.Add(player);
 
@@ -31,8 +34,8 @@ namespace MineKart
             GameObject follow = InitializeFollowCamera();
             GameObjects.Add(follow);
 
-            List<GameObject> trackSegments = InitializeTrack();
-            GameObjects.AddRange(trackSegments);
+            GameObject trackGenerator = InitializeTrackGenerator();
+            GameObjects.Add(trackGenerator);
 
             GameObject debug = InitializeDebug();
             GameObjects.Add(debug);
@@ -66,58 +69,19 @@ namespace MineKart
             return debug;
         }
 
-        private List<GameObject> InitializeTrack()
+        private GameObject InitializeTrackGenerator()
         {
-            List<GameObject> gameObjects = new List<GameObject>();
-            
-            List<TrackSegmentComponent> segmentComponents = TrackGenerator.GenerateTrack();
-            for (int z = 0; z < segmentComponents.Count; z++)
+            GameObject trackGenerator = new GameObject();
+
+            TrackGeneratorComponent trackGeneratorComponent = new TrackGeneratorComponent
             {
-                TrackSegmentComponent segmentComponent = segmentComponents[z];
-
-                GameObject segment = new GameObject();
-                segment.Transform.Position = new Vector3(0, 1, z);
-
-                segment.AddComponent(segmentComponent);
-
-                TrackSegmentDrawableComponent drawableComponent = new TrackSegmentDrawableComponent
-                {
-                    TextureFilePath = GetTrackSegmentTypeTextureFilePath(segmentComponent.SegmentType)
+                GenerateDistance = 100,
+                PruneDistance = 5,
+                Player = ServiceLocator.Instance.GetService<GameObject>("Player")
             };
+            trackGenerator.AddComponent(trackGeneratorComponent);
 
-                segment.AddComponent(drawableComponent);
-
-                gameObjects.Add(segment);
-            }
-
-            return gameObjects;
-        }
-
-        private string GetTrackSegmentTypeTextureFilePath(TrackSegmentType segmentType)
-        {
-            switch (segmentType)
-            {
-                case TrackSegmentType.Track:
-                    return "Assets\\track.png";
-
-                case TrackSegmentType.TrackBreaking:
-                    return "Assets\\track-breaking.png";
-
-                case TrackSegmentType.TrackFixing:
-                    return "Assets\\track-fixing.png";
-
-                case TrackSegmentType.HoleEntering:
-                    return "Assets\\hole-entering.png";
-
-                case TrackSegmentType.Hole:
-                    return "Assets\\hole.png";
-
-                case TrackSegmentType.HoleExiting:
-                    return "Assets\\hole-exiting.png";
-
-                default:
-                    throw new Exception($"Unhandled segment type: {segmentType}");
-            }
+            return trackGenerator;
         }
 
         private GameObject InitializePlayer()

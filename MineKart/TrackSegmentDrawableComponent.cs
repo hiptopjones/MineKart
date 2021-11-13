@@ -141,7 +141,7 @@ namespace MineKart
                 return;
             }
 
-            Debug.DrawText($"Segment {TrackSegment.CumulativeSegmentId}: {currentSegmentScreenRect}");
+            Debug.DrawText($"Segment {TrackSegment.SegmentId}: {currentSegmentScreenRect}");
 
             Vector3 screenDeltaPositionStep = screenDeltaPosition / screenDeltaPosition.Y;
             Vector3 screenDeltaPositionAccumulated = Vector3.Zero;
@@ -190,7 +190,7 @@ namespace MineKart
             Vector3 screenLeft = camera.ProjectPointToScreen(worldLeft);
             Vector3 screenRight = camera.ProjectPointToScreen(worldRight);
 
-            Color debugColor = TrackSegment.CumulativeSegmentId == 0 ? Color.Cyan : Color.Yellow;
+            Color debugColor = TrackSegment.SegmentId == 0 ? Color.Cyan : Color.Yellow;
             Debug.DrawLine(screenLeft, screenRight, debugColor);
         }
     }

@@ -21,16 +21,14 @@ namespace MineKart
     {
         public TrackSegmentType SegmentType { get; set; }
         public int SegmentId { get; set; } // Index within section
-        public int SectionId { get; set; } // Logical grouping (e.g. a single curve including all easings)
         public Vector3 Curvature { get; set; } // The ddx, ddy per segment
         public Vector3 CumulativeCurvature { get; set; }
-        public int CumulativeSegmentId { get; set; }
         public TrackSegmentComponent NextSegment { get; set; }
         public TrackSegmentComponent PreviousSegment { get; set; }
 
         public override string ToString()
         {
-            return $"[ {SegmentType} Id: {SegmentId} Section: {SectionId} Curve: {Curvature.X} Pitch: {Curvature.Y} Cumulative Curve: {CumulativeCurvature} ]";
+            return $"[ {SegmentType} Id: {SegmentId} Curve: {Curvature.X} Pitch: {Curvature.Y} Cumulative Curve: {CumulativeCurvature} ]";
         }
     }
 }

@@ -26,10 +26,10 @@
      showgrid="false"
      showborder="false"
      inkscape:object-paths="true"
-     inkscape:snap-global="true"
-     inkscape:zoom="0.28924023"
-     inkscape:cx="629.23474"
-     inkscape:cy="1892.8902"
+     inkscape:snap-global="false"
+     inkscape:zoom="0.20452373"
+     inkscape:cx="1329.9191"
+     inkscape:cy="-281.14098"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
      inkscape:window-x="-8"
@@ -263,7 +263,10 @@
          inkscape:export-ydpi="25.4" />
     </g>
     <g
-       id="g29224">
+       id="g29224"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\player.png"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4">
       <rect
          style="fill:#656161;fill-opacity:1;fill-rule:evenodd;stroke-width:0.165723"
          id="rect7360"
@@ -307,7 +310,7 @@
          id="rect8912"
          width="19.990383"
          height="34.26923"
-         x="235.60095"
+         x="236.24779"
          y="-136.36298"
          inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\player.png"
          inkscape:export-xdpi="25.4"
@@ -317,7 +320,7 @@
          id="rect9008"
          width="4.9975948"
          height="39.266827"
-         x="235.60095"
+         x="236.24779"
          y="-136.89214"
          inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\player.png"
          inkscape:export-xdpi="25.4"
@@ -335,7 +338,7 @@
          id="rect7898"
          width="19.990383"
          height="34.26923"
-         x="77.105766"
+         x="76.135521"
          y="-136.36298"
          inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\player.png"
          inkscape:export-xdpi="25.4"
@@ -345,7 +348,7 @@
          id="rect8914"
          width="4.9975948"
          height="39.266827"
-         x="92.187798"
+         x="91.217552"
          y="-136.36298"
          inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\player.png"
          inkscape:export-xdpi="25.4"
@@ -375,185 +378,56 @@
          inkscape:export-xdpi="25.4"
          inkscape:export-ydpi="25.4" />
     </g>
+    <rect
+       style="fill:#3fa500;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.0739668;stroke-opacity:1"
+       id="rect37284"
+       width="118.89642"
+       height="32.189663"
+       x="94.376503"
+       y="-319.51593"
+       rx="16.710428"
+       ry="13.096173"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\player.png"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4"
+       transform="matrix(0.96370412,0.2669726,-0.25210709,0.96769934,0,0)" />
     <g
-       id="g29189"
-       transform="translate(0,493.73912)">
+       id="g34146"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\hole-entering.png"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4">
       <rect
-         style="fill:#575757;fill-opacity:1;fill-rule:evenodd;stroke-width:0.330323"
-         id="rect9090"
-         width="340"
-         height="100"
-         x="3.5527137e-15"
-         y="189.19472"
-         inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
-         inkscape:export-xdpi="25.4"
-         inkscape:export-ydpi="25.4" />
-      <path
-         id="rect9092"
-         style="fill:#8e4617;fill-rule:evenodd;stroke-width:0.242623"
-         d="m 16.78726,223.1814 20.931682,-7.7348 32.879415,15.82613 64.848993,-9.7184 62.90935,5.0994 38.61749,-7.36775 58.88224,-5.06367 26.64238,8.23569 v 50.30642 H 16.78726 Z"
-         sodipodi:nodetypes="ccccccccccc" />
-      <rect
-         style="fill:#515151;fill-opacity:1;fill-rule:evenodd;stroke-width:0.0631731"
-         id="rect20947"
-         width="38.195915"
-         height="24.98798"
-         x="-29.942287"
-         y="241.25424"
-         inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
+         style="fill:url(#linearGradient22491);fill-opacity:1;fill-rule:evenodd;stroke-width:0.330322"
+         id="rect20971"
+         width="100"
+         height="340"
+         x="-682.93384"
+         y="0"
+         inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\hole-entering.png"
          inkscape:export-xdpi="25.4"
          inkscape:export-ydpi="25.4"
-         transform="rotate(-18.826087)" />
-      <rect
-         style="fill:#515151;fill-opacity:1;fill-rule:evenodd;stroke-width:0.0631731"
-         id="rect20959"
-         width="38.195915"
-         height="24.98798"
-         x="253.63831"
-         y="209.70578"
-         inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
-         inkscape:export-xdpi="25.4"
-         inkscape:export-ydpi="25.4"
-         transform="rotate(4.3219374)" />
-      <path
-         id="rect9094"
-         style="fill:#a05a2c;fill-rule:evenodd;stroke-width:0.240346"
-         d="m 20,225.39891 15.905977,-1.0611 38.74906,15.8185 59.618273,-13.03868 83.90672,6.71536 25.65116,-9.84629 48.96203,-2.78997 26.91742,6.80642 L 320,269.19472 H 20 Z"
-         sodipodi:nodetypes="ccccccccccc" />
-      <rect
-         style="fill:#636363;fill-opacity:1;fill-rule:evenodd;stroke-width:0.0610717"
-         id="rect20949"
-         width="35.697117"
-         height="24.98798"
-         x="-28.480114"
-         y="240.18333"
-         inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
-         inkscape:export-xdpi="25.4"
-         inkscape:export-ydpi="25.4"
-         transform="rotate(-18.826087)" />
+         transform="rotate(-90)" />
       <path
          id="rect9100"
          style="fill:#8b8b8b;fill-rule:evenodd;stroke-width:0.447584"
-         d="m 38.445035,193.77839 12.39948,-3.74177 9.354433,29.51192 21.393334,26.69517 6.9506,21.48017 v 21.47084 h -14.551 v -20.90957 l -6.062099,-19.57576 -20.130315,-25.6997 z"
+         d="m 38.445035,587.51751 12.39948,-3.74177 9.354433,29.51192 21.393334,26.69517 1.233394,20.56542 -5.317001,22.38559 h -14.551 l 5.317001,-21.82432 -0.344893,-18.66101 -20.130315,-25.6997 z"
          sodipodi:nodetypes="ccccccccccc" />
-      <circle
-         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke-width:0.1"
-         id="circle20951"
-         cx="0.96999609"
-         cy="246.60881"
-         r="2.6772835"
-         inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
-         inkscape:export-xdpi="25.4"
-         inkscape:export-ydpi="25.4"
-         transform="rotate(-18.826087)" />
       <path
          id="rect9102"
          style="fill:#e5e5e5;fill-rule:evenodd;stroke-width:0.371042"
-         d="m 39.919084,193.31067 9.532016,-2.99341 9.354433,29.97964 21.03774,26.5713 6.557839,21.05768 v 21.26884 H 76.401375 V 268.39085 L 69.98523,248.08898 49.647695,222.54197 Z"
+         d="m 39.919084,587.04979 9.532016,-2.99341 9.354433,29.97964 21.03774,26.5713 0.840633,20.14293 -5.317001,22.18359 H 65.367168 L 70.684169,661.21522 69.98523,641.8281 49.647695,616.28109 Z"
          sodipodi:nodetypes="ccccccccccc" />
-      <circle
-         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke-width:0.1"
-         id="circle20953"
-         cx="0.96999609"
-         cy="258.92432"
-         r="2.6772835"
-         inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
-         inkscape:export-xdpi="25.4"
-         inkscape:export-ydpi="25.4"
-         transform="rotate(-18.826087)" />
-      <rect
-         style="fill:#636363;fill-opacity:1;fill-rule:evenodd;stroke-width:0.0610717"
-         id="rect20961"
-         width="35.697117"
-         height="24.98798"
-         x="255.10046"
-         y="208.63489"
-         inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
-         inkscape:export-xdpi="25.4"
-         inkscape:export-ydpi="25.4"
-         transform="rotate(4.3219374)" />
       <path
          id="rect9116"
          style="fill:#8b8b8b;fill-rule:evenodd;stroke-width:0.44759"
-         d="m 263.6377,191.2635 12.59607,5.49147 -8.82903,16.00136 -5.06381,18.2992 3.66378,23.96916 -0.0468,34.17003 h -14.55138 l 0.21702,-33.3436 -3.97871,-27.56723 6.43827,-19.91764 z"
+         d="m 263.6377,585.00262 12.59607,5.49147 -8.82903,16.00136 -5.06381,18.2992 3.66378,23.96916 -3.425,33.84661 h -14.55138 l 3.59522,-33.02018 -3.97871,-27.56723 6.43827,-19.91764 z"
          sodipodi:nodetypes="ccccccccccc" />
-      <circle
-         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke-width:0.1"
-         id="circle20963"
-         cx="284.55057"
-         cy="215.06036"
-         r="2.6772835"
-         inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
-         inkscape:export-xdpi="25.4"
-         inkscape:export-ydpi="25.4"
-         transform="rotate(4.3219374)" />
       <path
          id="rect9118"
          style="fill:#e5e5e5;fill-rule:evenodd;stroke-width:0.371048"
-         d="m 266.11393,191.58195 8.26384,3.25531 -8.68083,16.10662 -5.78721,20.11056 3.90637,24.3063 v 33.83398 h -10 v -33.6893 l -3.90637,-26.4765 6.07657,-19.38716 z"
+         d="m 266.11393,585.32107 8.26384,3.25531 -8.68083,16.10662 -5.78721,20.11056 3.90637,24.3063 -3.3782,33.51056 h -10 l 3.3782,-33.36588 -3.90637,-26.4765 6.07657,-19.38716 z"
          sodipodi:nodetypes="ccccccccccc" />
-      <circle
-         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke-width:0.1"
-         id="circle20955"
-         cx="-22.500854"
-         cy="246.60881"
-         r="2.6772835"
-         inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
-         inkscape:export-xdpi="25.4"
-         inkscape:export-ydpi="25.4"
-         transform="rotate(-18.826087)" />
-      <circle
-         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke-width:0.1"
-         id="circle20957"
-         cx="-22.500854"
-         cy="258.74585"
-         r="2.6772835"
-         inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
-         inkscape:export-xdpi="25.4"
-         inkscape:export-ydpi="25.4"
-         transform="rotate(-18.826087)" />
-      <circle
-         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke-width:0.1"
-         id="circle20965"
-         cx="284.55057"
-         cy="227.37585"
-         r="2.6772835"
-         inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
-         inkscape:export-xdpi="25.4"
-         inkscape:export-ydpi="25.4"
-         transform="rotate(4.3219374)" />
-      <circle
-         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke-width:0.1"
-         id="circle20967"
-         cx="261.07971"
-         cy="215.06036"
-         r="2.6772835"
-         inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
-         inkscape:export-xdpi="25.4"
-         inkscape:export-ydpi="25.4"
-         transform="rotate(4.3219374)" />
-      <circle
-         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke-width:0.1"
-         id="circle20969"
-         cx="261.07971"
-         cy="227.19739"
-         r="2.6772835"
-         inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
-         inkscape:export-xdpi="25.4"
-         inkscape:export-ydpi="25.4"
-         transform="rotate(4.3219374)" />
     </g>
-    <rect
-       style="fill:url(#linearGradient22491);fill-opacity:1;fill-rule:evenodd;stroke-width:0.330322"
-       id="rect20971"
-       width="100"
-       height="340"
-       x="-682.93384"
-       y="0"
-       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
-       inkscape:export-xdpi="25.4"
-       inkscape:export-ydpi="25.4"
-       transform="rotate(-90)" />
     <rect
        style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.330322;stroke-opacity:1"
        id="rect25779"
@@ -561,7 +435,7 @@
        height="340"
        x="-582.93384"
        y="0"
-       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\hole.png"
        inkscape:export-xdpi="25.4"
        inkscape:export-ydpi="25.4"
        transform="rotate(-90)" />
@@ -572,13 +446,16 @@
        height="340"
        x="382.93384"
        y="-340"
-       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\hole-exiting.png"
        inkscape:export-xdpi="25.4"
        inkscape:export-ydpi="25.4"
        transform="rotate(90)" />
     <g
        id="g29264"
-       transform="rotate(180,170,286.06428)">
+       transform="rotate(180,170,286.06428)"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\track-fixing.png"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4">
       <rect
          style="fill:#575757;fill-opacity:1;fill-rule:evenodd;stroke-width:0.330323"
          id="rect29226"
@@ -744,191 +621,444 @@
          inkscape:export-ydpi="25.4"
          transform="rotate(4.3219374)" />
     </g>
+    <rect
+       style="fill:#575757;fill-opacity:1;fill-rule:evenodd;stroke-width:0.330323"
+       id="rect29266"
+       width="340"
+       height="100"
+       x="-2.8266602e-06"
+       y="782.93384"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4" />
+    <rect
+       style="fill:#8e4617;fill-opacity:1;fill-rule:evenodd;stroke-width:0.242623"
+       id="rect29268"
+       width="305.71155"
+       height="60"
+       x="16.787258"
+       y="806.50354"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4" />
+    <rect
+       style="fill:#a05a2c;fill-opacity:1;fill-rule:evenodd;stroke-width:0.240346"
+       id="rect29270"
+       width="300"
+       height="60"
+       x="19.999998"
+       y="802.93384"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4" />
+    <rect
+       style="fill:#515151;fill-opacity:1;fill-rule:evenodd;stroke-width:0.0631731"
+       id="rect29272"
+       width="38.195915"
+       height="24.98798"
+       x="62.088303"
+       y="822.92426"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4" />
+    <rect
+       style="fill:#636363;fill-opacity:1;fill-rule:evenodd;stroke-width:0.0610717"
+       id="rect29274"
+       width="35.697117"
+       height="24.98798"
+       x="63.550476"
+       y="821.85333"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4" />
+    <rect
+       style="fill:#8b8b8b;fill-opacity:1;fill-rule:evenodd;stroke-width:0.447584"
+       id="rect29276"
+       width="14.551"
+       height="100"
+       x="73.991882"
+       y="782.93384"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4" />
+    <rect
+       style="fill:#e5e5e5;fill-opacity:1;fill-rule:evenodd;stroke-width:0.371042"
+       id="rect29278"
+       width="9.9997368"
+       height="100"
+       x="76.401375"
+       y="782.93384"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4" />
+    <circle
+       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke-width:0.1"
+       id="circle29280"
+       cx="93.000595"
+       cy="828.27881"
+       r="2.6772835"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4" />
+    <circle
+       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke-width:0.1"
+       id="circle29282"
+       cx="93.000595"
+       cy="840.5943"
+       r="2.6772835"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4" />
+    <circle
+       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke-width:0.1"
+       id="circle29284"
+       cx="69.529739"
+       cy="828.27881"
+       r="2.6772835"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4" />
+    <circle
+       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke-width:0.1"
+       id="circle29286"
+       cx="69.529739"
+       cy="840.41583"
+       r="2.6772835"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4" />
+    <rect
+       style="fill:#515151;fill-opacity:1;fill-rule:evenodd;stroke-width:0.0631731"
+       id="rect29288"
+       width="38.195915"
+       height="24.98798"
+       x="239.53726"
+       y="822.92426"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4" />
+    <rect
+       style="fill:#636363;fill-opacity:1;fill-rule:evenodd;stroke-width:0.0610717"
+       id="rect29290"
+       width="35.697117"
+       height="24.98798"
+       x="240.96515"
+       y="821.85333"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4" />
+    <rect
+       style="fill:#8b8b8b;fill-opacity:1;fill-rule:evenodd;stroke-width:0.44759"
+       id="rect29292"
+       width="14.551383"
+       height="100"
+       x="251.40656"
+       y="782.93384"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4" />
+    <rect
+       style="fill:#e5e5e5;fill-opacity:1;fill-rule:evenodd;stroke-width:0.371048"
+       id="rect29294"
+       width="10"
+       height="100"
+       x="253.8161"
+       y="782.93384"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4" />
+    <circle
+       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke-width:0.1"
+       id="circle29296"
+       cx="270.41525"
+       cy="828.27881"
+       r="2.6772835"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4" />
+    <circle
+       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke-width:0.1"
+       id="circle29298"
+       cx="270.41525"
+       cy="840.5943"
+       r="2.6772835"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4" />
+    <circle
+       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke-width:0.1"
+       id="circle29300"
+       cx="246.94441"
+       cy="828.27881"
+       r="2.6772835"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4" />
+    <circle
+       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke-width:0.1"
+       id="circle29302"
+       cx="246.94441"
+       cy="840.41583"
+       r="2.6772835"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4" />
     <g
-       id="g29304"
-       transform="translate(0.05058517,182.93384)">
+       id="g34167"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\track-breaking.png"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4">
       <rect
          style="fill:#575757;fill-opacity:1;fill-rule:evenodd;stroke-width:0.330323"
-         id="rect29266"
+         id="rect9090"
          width="340"
          height="100"
          x="3.5527137e-15"
-         y="3.5527137e-15"
+         y="682.93384"
          inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
          inkscape:export-xdpi="25.4"
          inkscape:export-ydpi="25.4" />
-      <rect
-         style="fill:#8e4617;fill-opacity:1;fill-rule:evenodd;stroke-width:0.242623"
-         id="rect29268"
-         width="305.71155"
-         height="60"
-         x="16.78726"
-         y="23.569712"
-         inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
-         inkscape:export-xdpi="25.4"
-         inkscape:export-ydpi="25.4" />
-      <rect
-         style="fill:#a05a2c;fill-opacity:1;fill-rule:evenodd;stroke-width:0.240346"
-         id="rect29270"
-         width="300"
-         height="60"
-         x="20"
-         y="20"
-         inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
-         inkscape:export-xdpi="25.4"
-         inkscape:export-ydpi="25.4" />
+      <path
+         id="rect9092"
+         style="fill:#8e4617;fill-rule:evenodd;stroke-width:0.242623"
+         d="m 16.78726,716.92052 20.931682,-7.7348 32.879415,15.82613 64.848993,-9.7184 62.90935,5.0994 38.61749,-7.36775 58.88224,-5.06367 26.64238,8.23569 v 50.30642 H 16.78726 Z"
+         sodipodi:nodetypes="ccccccccccc" />
       <rect
          style="fill:#515151;fill-opacity:1;fill-rule:evenodd;stroke-width:0.0631731"
-         id="rect29272"
+         id="rect20947"
          width="38.195915"
          height="24.98798"
-         x="62.088306"
-         y="39.990387"
+         x="-189.27026"
+         y="708.57953"
          inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
          inkscape:export-xdpi="25.4"
-         inkscape:export-ydpi="25.4" />
-      <rect
-         style="fill:#636363;fill-opacity:1;fill-rule:evenodd;stroke-width:0.0610717"
-         id="rect29274"
-         width="35.697117"
-         height="24.98798"
-         x="63.55048"
-         y="38.919472"
-         inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
-         inkscape:export-xdpi="25.4"
-         inkscape:export-ydpi="25.4" />
-      <rect
-         style="fill:#8b8b8b;fill-opacity:1;fill-rule:evenodd;stroke-width:0.447584"
-         id="rect29276"
-         width="14.551"
-         height="100"
-         x="73.991882"
-         y="3.5527137e-15"
-         inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
-         inkscape:export-xdpi="25.4"
-         inkscape:export-ydpi="25.4" />
-      <rect
-         style="fill:#e5e5e5;fill-opacity:1;fill-rule:evenodd;stroke-width:0.371042"
-         id="rect29278"
-         width="9.9997368"
-         height="100"
-         x="76.401375"
-         y="3.5527137e-15"
-         inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
-         inkscape:export-xdpi="25.4"
-         inkscape:export-ydpi="25.4" />
-      <circle
-         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke-width:0.1"
-         id="circle29280"
-         cx="93.000595"
-         cy="45.344952"
-         r="2.6772835"
-         inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
-         inkscape:export-xdpi="25.4"
-         inkscape:export-ydpi="25.4" />
-      <circle
-         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke-width:0.1"
-         id="circle29282"
-         cx="93.000595"
-         cy="57.660458"
-         r="2.6772835"
-         inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
-         inkscape:export-xdpi="25.4"
-         inkscape:export-ydpi="25.4" />
-      <circle
-         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke-width:0.1"
-         id="circle29284"
-         cx="69.529739"
-         cy="45.344952"
-         r="2.6772835"
-         inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
-         inkscape:export-xdpi="25.4"
-         inkscape:export-ydpi="25.4" />
-      <circle
-         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke-width:0.1"
-         id="circle29286"
-         cx="69.529739"
-         cy="57.481972"
-         r="2.6772835"
-         inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
-         inkscape:export-xdpi="25.4"
-         inkscape:export-ydpi="25.4" />
+         inkscape:export-ydpi="25.4"
+         transform="rotate(-18.826087)" />
       <rect
          style="fill:#515151;fill-opacity:1;fill-rule:evenodd;stroke-width:0.0631731"
-         id="rect29288"
+         id="rect20959"
          width="38.195915"
          height="24.98798"
-         x="239.53726"
-         y="39.990387"
+         x="290.84674"
+         y="702.04089"
          inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
          inkscape:export-xdpi="25.4"
-         inkscape:export-ydpi="25.4" />
+         inkscape:export-ydpi="25.4"
+         transform="rotate(4.3219374)" />
+      <path
+         id="rect9094"
+         style="fill:#a05a2c;fill-rule:evenodd;stroke-width:0.240346"
+         d="m 20,719.13803 15.905977,-1.0611 38.74906,15.8185 59.618273,-13.03868 83.90672,6.71536 25.65116,-9.84629 48.96203,-2.78997 26.91742,6.80642 L 320,762.93384 H 20 Z"
+         sodipodi:nodetypes="ccccccccccc" />
       <rect
          style="fill:#636363;fill-opacity:1;fill-rule:evenodd;stroke-width:0.0610717"
-         id="rect29290"
+         id="rect20949"
          width="35.697117"
          height="24.98798"
-         x="240.96515"
-         y="38.919472"
+         x="-187.80809"
+         y="707.50861"
          inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
          inkscape:export-xdpi="25.4"
-         inkscape:export-ydpi="25.4" />
+         inkscape:export-ydpi="25.4"
+         transform="rotate(-18.826087)" />
+      <circle
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke-width:0.1"
+         id="circle20951"
+         cx="-158.35797"
+         cy="713.93408"
+         r="2.6772835"
+         inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
+         inkscape:export-xdpi="25.4"
+         inkscape:export-ydpi="25.4"
+         transform="rotate(-18.826087)" />
+      <circle
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke-width:0.1"
+         id="circle20953"
+         cx="-158.35797"
+         cy="726.24957"
+         r="2.6772835"
+         inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
+         inkscape:export-xdpi="25.4"
+         inkscape:export-ydpi="25.4"
+         transform="rotate(-18.826087)" />
       <rect
-         style="fill:#8b8b8b;fill-opacity:1;fill-rule:evenodd;stroke-width:0.44759"
-         id="rect29292"
-         width="14.551383"
-         height="100"
-         x="251.40656"
-         y="3.5527137e-15"
+         style="fill:#636363;fill-opacity:1;fill-rule:evenodd;stroke-width:0.0610717"
+         id="rect20961"
+         width="35.697117"
+         height="24.98798"
+         x="292.3089"
+         y="700.96997"
          inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
          inkscape:export-xdpi="25.4"
-         inkscape:export-ydpi="25.4" />
-      <rect
-         style="fill:#e5e5e5;fill-opacity:1;fill-rule:evenodd;stroke-width:0.371048"
-         id="rect29294"
-         width="10"
-         height="100"
-         x="253.8161"
-         y="3.5527137e-15"
-         inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
-         inkscape:export-xdpi="25.4"
-         inkscape:export-ydpi="25.4" />
+         inkscape:export-ydpi="25.4"
+         transform="rotate(4.3219374)" />
+      <path
+         id="circle20963"
+         style="fill-rule:evenodd;stroke-width:0.1"
+         transform="rotate(4.3219374)"
+         d="m 324.43629,707.39545 a 2.6772835,2.6772835 0 0 1 -2.67729,2.67728 2.6772835,2.6772835 0 0 1 -2.67728,-2.67728 2.6772835,2.6772835 0 0 1 2.67728,-2.67729 2.6772835,2.6772835 0 0 1 2.67729,2.67729 z" />
       <circle
          style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke-width:0.1"
-         id="circle29296"
-         cx="270.41525"
-         cy="45.344952"
+         id="circle20955"
+         cx="-181.82883"
+         cy="713.93408"
          r="2.6772835"
          inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
          inkscape:export-xdpi="25.4"
-         inkscape:export-ydpi="25.4" />
+         inkscape:export-ydpi="25.4"
+         transform="rotate(-18.826087)" />
       <circle
          style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke-width:0.1"
-         id="circle29298"
-         cx="270.41525"
-         cy="57.660458"
+         id="circle20957"
+         cx="-181.82883"
+         cy="726.07111"
          r="2.6772835"
          inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
          inkscape:export-xdpi="25.4"
-         inkscape:export-ydpi="25.4" />
+         inkscape:export-ydpi="25.4"
+         transform="rotate(-18.826087)" />
+      <path
+         id="circle20965"
+         style="fill-rule:evenodd;stroke-width:0.1"
+         transform="rotate(4.3219374)"
+         d="m 324.43629,719.71094 a 2.6772835,2.6772835 0 0 1 -2.67729,2.67728 2.6772835,2.6772835 0 0 1 -2.67728,-2.67728 2.6772835,2.6772835 0 0 1 2.67728,-2.67729 2.6772835,2.6772835 0 0 1 2.67729,2.67729 z" />
       <circle
          style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke-width:0.1"
-         id="circle29300"
-         cx="246.94441"
-         cy="45.344952"
+         id="circle20967"
+         cx="298.28815"
+         cy="707.39545"
          r="2.6772835"
          inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
          inkscape:export-xdpi="25.4"
-         inkscape:export-ydpi="25.4" />
+         inkscape:export-ydpi="25.4"
+         transform="rotate(4.3219374)" />
       <circle
          style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke-width:0.1"
-         id="circle29302"
-         cx="246.94441"
-         cy="57.481972"
+         id="circle20969"
+         cx="298.28815"
+         cy="719.53247"
          r="2.6772835"
          inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
          inkscape:export-xdpi="25.4"
-         inkscape:export-ydpi="25.4" />
+         inkscape:export-ydpi="25.4"
+         transform="rotate(4.3219374)" />
+      <path
+         id="rect29714"
+         style="fill:#8b8b8b;fill-rule:evenodd;stroke-width:0.447584"
+         d="m 62.957675,682.93384 h 14.551 l 2.344055,21.30685 -3.471698,22.17716 12.16185,35.38379 v 21.1322 h -14.551 v -21.2939 l -12.16185,-35.22209 3.471698,-22.9857 z"
+         sodipodi:nodetypes="ccccccccccc" />
+      <path
+         id="rect29716"
+         style="fill:#e5e5e5;fill-rule:evenodd;stroke-width:0.371042"
+         d="m 65.367168,682.93384 h 9.999737 l 2.344055,20.66002 -3.471698,23.14741 12.16185,34.09013 v 22.10244 h -9.999737 v -22.74927 l -12.16185,-33.4433 3.471698,-23.63253 z"
+         sodipodi:nodetypes="ccccccccccc" />
+      <path
+         id="rect29718"
+         style="fill:#8b8b8b;fill-rule:evenodd;stroke-width:0.44759"
+         d="m 248.02836,682.61042 h 14.55138 l 3.3782,23.57881 -4.28475,38.44289 4.28475,18.50048 v 19.80124 h -14.55138 v -18.88649 l -4.28475,-18.72916 4.28475,-38.90027 z"
+         sodipodi:nodetypes="ccccccccccc" />
+      <path
+         id="rect29720"
+         style="fill:#e5e5e5;fill-rule:evenodd;stroke-width:0.371048"
+         d="m 250.4379,682.61042 h 10 l 3.3782,23.8075 -4.28475,39.58633 4.28475,18.27179 v 18.6578 h -10 v -19.57255 l -4.28475,-18.27179 4.28475,-38.90027 z"
+         sodipodi:nodetypes="ccccccccccc" />
     </g>
+    <circle
+       style="fill:#ffce6b;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.1;stroke-opacity:1"
+       id="path34382"
+       cx="160.80905"
+       cy="-346.98364"
+       r="41.396988"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\player.png"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4"
+       transform="rotate(15.037356)" />
+    <rect
+       style="fill:#47443f;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.0977175;stroke-opacity:1"
+       id="rect36974"
+       width="77.617683"
+       height="53.117962"
+       x="199.35663"
+       y="-355.13409"
+       transform="matrix(0.99977723,0.02110668,-0.02314795,0.99973205,0,0)"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\player.png"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4" />
+    <rect
+       style="fill:#47443f;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.1;stroke-opacity:1"
+       id="rect37100"
+       width="49.158924"
+       height="10.349247"
+       x="178.92023"
+       y="-368.9758"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\player.png"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4"
+       transform="rotate(15.037356)" />
+    <circle
+       style="fill:#3fa500;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.1;stroke-opacity:1"
+       id="path39882"
+       cx="193.15044"
+       cy="-345.69"
+       r="5.1746235"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\player.png"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4"
+       transform="rotate(15.037356)" />
+    <rect
+       style="fill:#e75e31;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.0790944;stroke-opacity:1"
+       id="rect40540"
+       width="120.15749"
+       height="36.421047"
+       x="-221.90874"
+       y="-233.92694"
+       rx="16.887665"
+       ry="14.817686"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\player.png"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4"
+       transform="matrix(-0.95358999,0.30110817,0.22281738,0.9748602,0,0)" />
+    <circle
+       style="fill:#bb810a;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.1;stroke-opacity:1"
+       id="circle40542"
+       cx="-157.11279"
+       cy="-269.61166"
+       r="41.396988"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\player.png"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4"
+       transform="matrix(-0.96575687,0.25944876,0.25944876,0.96575687,0,0)" />
+    <rect
+       style="fill:#47443f;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.0867088;stroke-opacity:1"
+       id="rect40544"
+       width="77.611107"
+       height="41.827339"
+       x="-129.73441"
+       y="-344.94324"
+       transform="matrix(-0.9998619,0.01661898,0.02939637,0.99956783,0,0)"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\player.png"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4" />
+    <rect
+       style="fill:#47443f;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.1;stroke-opacity:1"
+       id="rect40546"
+       width="49.158924"
+       height="10.349247"
+       x="-139.00162"
+       y="-291.60382"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\player.png"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4"
+       transform="matrix(-0.96575687,0.25944876,0.25944876,0.96575687,0,0)" />
+    <circle
+       style="fill:#a0c9d0;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.1;stroke-opacity:1"
+       id="circle40548"
+       cx="-124.77142"
+       cy="-268.31802"
+       r="5.1746235"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\player.png"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4"
+       transform="matrix(-0.96575687,0.25944876,0.25944876,0.96575687,0,0)" />
   </g>
 </svg>

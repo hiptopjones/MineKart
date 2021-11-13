@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{3796C6B3-D351-4D79-8F61-8B7A58EF1DF8}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>TestGame</RootNamespace>
-    <AssemblyName>TestGame</AssemblyName>
+    <RootNamespace>MineKart</RootNamespace>
+    <AssemblyName>MineKart</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -61,7 +61,7 @@
     <Compile Include="MyGame.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TrackGenerator.cs" />
+    <Compile Include="TrackGeneratorComponent.cs" />
     <Compile Include="TrackSegmentComponent.cs" />
     <Compile Include="TrackSegmentDrawableComponent.cs" />
   </ItemGroup>

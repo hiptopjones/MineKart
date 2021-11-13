@@ -32,5 +32,11 @@ namespace SdlEngine
         {
             return value >= minValue && value <= maxValue;
         }
+
+        public static double Lerp(double start, double end, double percent)
+        {
+            return start + (end - start) * percent;
+        }
+
     }
 }

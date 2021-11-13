@@ -70,17 +70,22 @@ namespace SdlEngine
         {
             if (NewGameObjects.Count > 0)
             {
-                foreach (GameObject gameObject in NewGameObjects)
+                // Swap out the collection to avoid races with new objects being added during the below processing
+
+                List<GameObject> newGameObjects = NewGameObjects;
+                NewGameObjects = new List<GameObject>();
+
+                foreach (GameObject gameObject in newGameObjects)
                 {
                     gameObject.Awake();
                 }
 
-                foreach (GameObject gameObject in NewGameObjects)
+                foreach (GameObject gameObject in newGameObjects)
                 {
                     gameObject.Start();
                 }
 
-                foreach (GameObject gameObject in NewGameObjects)
+                foreach (GameObject gameObject in newGameObjects)
                 {
                     GameObjects.Add(gameObject);
 
@@ -96,8 +101,6 @@ namespace SdlEngine
                         CollidableGameObjects.Add(gameObject);
                     }
                 }
-
-                NewGameObjects.Clear();
             }
         }
 
