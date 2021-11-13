@@ -50,13 +50,24 @@ namespace SdlEngine
 
         private void DrawBoundingBoxes(BoxCollider boxCollider1, BoxCollider boxCollider2)
         {
+            DrawBoundingBox(boxCollider1.BoundingBox);
+            DrawBoundingBox(boxCollider2.BoundingBox);
+        }
+
+        private void DrawBoundingBox(Rect3 boundingBox)
+        {
             Camera camera = ServiceLocator.Instance.GetService<Camera>();
 
-            Rect3 projectedBoundingBox1 = camera.ProjectRectToScreen(boxCollider1.BoundingBox);
-            Debug.DrawRect(projectedBoundingBox1);
+            Rect3 frontRect = camera.ProjectRectToScreen(boundingBox);
+            Debug.DrawRect(frontRect, Color.Green);
 
-            Rect3 projectedBoundingBox2 = camera.ProjectRectToScreen(boxCollider2.BoundingBox);
-            Debug.DrawRect(projectedBoundingBox2);
+            Rect3 backRect = camera.ProjectRectToScreen(boundingBox + new Vector3(0, 0, boundingBox.Depth));
+            Debug.DrawRect(backRect, Color.Red);
+
+            Debug.DrawLine(frontRect.GetPosition(), backRect.GetPosition(), Color.Green);
+            Debug.DrawLine(frontRect.GetPosition() + new Vector3(frontRect.Width, 0, 0), backRect.GetPosition() + new Vector3(backRect.Width, 0, 0), Color.Green);
+            Debug.DrawLine(frontRect.GetPosition() + new Vector3(frontRect.Width, frontRect.Height, 0), backRect.GetPosition() + new Vector3(backRect.Width, backRect.Height, 0), Color.Green);
+            Debug.DrawLine(frontRect.GetPosition() + new Vector3(0, frontRect.Height, 0), backRect.GetPosition() + new Vector3(0, backRect.Height, 0), Color.Green);
         }
     }
 }
