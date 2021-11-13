@@ -33,13 +33,17 @@ namespace MineKart
 
         public override void Start()
         {
-            GrowTrack();
+            TrackSegmentComponent previousSegmentComponent = GenerateStraight(null, 10);
+            GenerateHill(previousSegmentComponent, 20, 0.2);
+
+            FirstActiveObjectIndex = 0;
         }
 
         public override void Update()
         {
             PruneTrack();
 
+            Debug.DrawText($"Total GameObjects: {SceneObjects.GameObjects.Count}");
             Debug.DrawText($"Active: {TrackSegments.Count}");
             Debug.DrawText($"First: {FirstActiveObjectIndex}");
             Debug.DrawText($"Last:  {LastActiveObjectIndex}");
@@ -96,18 +100,11 @@ namespace MineKart
 
         public void GrowTrack()
         {
-            if (FirstActiveObjectIndex < 0)
-            {
-                GenerateStraight(null, 10);
-                FirstActiveObjectIndex = 0;
-            }
-
             TrackSegmentComponent previousSegmentComponent = TrackSegments[LastActiveObjectIndex].GetComponent<TrackSegmentComponent>();
 
             while (LastActiveObjectIndex < Player.Transform.Position.Z + GenerateDistance)
             {
                 // TODO: Add percent settings to the GameSettings
-                // TODO: Use random for number of segments and hill/curve values
 
                 int percent = Random.Next(100);
                 if (percent < 25)
@@ -116,21 +113,21 @@ namespace MineKart
                 }
                 else if (percent < 50)
                 {
-                    int numSegments = Random.Next(5, 15);
-                    double incline = Utilities.Lerp(0.02, 0.15, Random.NextDouble());
+                    int numSegments = Random.Next(10, 15);
+                    double incline = Utilities.Lerp(0.1, 0.15, Random.NextDouble());
                     int sign = Random.Next(2) == 0 ? -1 : 1;
                     previousSegmentComponent = GenerateHill(previousSegmentComponent, numSegments, incline * sign);
                 }
                 else if (percent < 90)
                 {
-                    int numSegments = Random.Next(5, 15);
-                    double curvature = Utilities.Lerp(0.05, 0.3, Random.NextDouble());
+                    int numSegments = Random.Next(10, 15);
+                    double curvature = Utilities.Lerp(0.15, 0.3, Random.NextDouble());
                     int sign = Random.Next(2) == 0 ? -1 : 1;
                     previousSegmentComponent = GenerateCurve(previousSegmentComponent, numSegments, curvature * sign);
                 }
                 else
                 {
-                    int numSegments = Random.Next(5, 15);
+                    int numSegments = Random.Next(10, 15);
                     previousSegmentComponent = GenerateStraight(previousSegmentComponent, numSegments);
                 }
             }

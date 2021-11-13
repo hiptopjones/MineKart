@@ -8,10 +8,10 @@ namespace SdlEngine
 {
     public class GameObjectCollection
     {
-        private List<GameObject> GameObjects { get; set; } = new List<GameObject>();
-        private List<GameObject> NewGameObjects { get; set; } = new List<GameObject>();
-        private List<GameObject> DrawableGameObjects { get; set; } = new List<GameObject>();
-        private List<GameObject> CollidableGameObjects { get; set; } = new List<GameObject>();
+        public List<GameObject> GameObjects { get; set; } = new List<GameObject>();
+        public List<GameObject> NewGameObjects { get; set; } = new List<GameObject>();
+        public List<GameObject> DrawableGameObjects { get; set; } = new List<GameObject>();
+        public List<GameObject> CollidableGameObjects { get; set; } = new List<GameObject>();
 
         private DrawableSystem DrawableSystem { get; set; }
         private CollisionSystem CollisionSystem { get; set; }

@@ -22,7 +22,7 @@ namespace MineKart
         {
             GameObjects = new GameObjectCollection();
 
-            // Make the game object collection available to other interested parties
+            // Make the game object collection available to the locator
             ServiceLocator.Instance.ProvideService<GameObjectCollection>(GameObjects);
 
             GameObject player = InitializePlayer();
@@ -133,7 +133,7 @@ namespace MineKart
                 DefaultPosition = Vector3.Zero,
                 Camera = ServiceLocator.Instance.GetService<Camera>(),
                 FollowObject = ServiceLocator.Instance.GetService<GameObject>("Player"),
-                FollowOffset = new Vector3(0, -1, -2),
+                FollowOffset = new Vector3(0, -1.5, -2),
                 IsFollowingZ = true
             };
 

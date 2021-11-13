@@ -29,5 +29,11 @@ namespace SdlEngine
         {
 
         }
+
+        //// Called on destroy if the object is being pooled
+        //public virtual void Reset()
+        //{
+
+        //}
     }
 }
