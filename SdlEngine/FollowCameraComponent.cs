@@ -13,6 +13,11 @@ namespace SdlEngine
         public Camera Camera { get; set; }
         public GameObject FollowObject { get; set; }
         public Vector3 FollowOffset { get; set; }
+        public Vector3 DefaultPosition { get; set; }
+
+        public bool IsFollowingX { get; set; }
+        public bool IsFollowingY { get; set; }
+        public bool IsFollowingZ { get; set; }
 
         private bool IsFollowing { get; set; } = true;
 
@@ -43,11 +48,26 @@ namespace SdlEngine
         {
             if (IsFollowing)
             {
-                Camera.Position = FollowObject.Transform.Position + FollowOffset;
+                Vector3 cameraPosition = Camera.Position;
+
+                if (IsFollowingX)
+                {
+                    cameraPosition.X = FollowObject.Transform.Position.X + FollowOffset.X;
+                }
+                if (IsFollowingY)
+                {
+                    cameraPosition.Y = FollowObject.Transform.Position.Y + FollowOffset.Y;
+                }
+                if (IsFollowingZ)
+                {
+                    cameraPosition.Z = FollowObject.Transform.Position.Z + FollowOffset.Z;
+                }
+
+                Camera.Position = cameraPosition;
             }
             else
             {
-                Camera.Position = new Vector3(0, 0, 0);
+                Camera.Position = DefaultPosition;
             }
         }
     }

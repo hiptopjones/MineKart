@@ -53,28 +53,26 @@ namespace MineKart
 
                     // TODO: Throw sparks, make noise, animate rumble
                 }
-
             }
             else
             {
-                if (EventManager.IsKeyPressed(SDL.SDL_Keycode.SDLK_DOWN))
-                {
-                    IsBraking = true;
-                    velocity.Z = BrakeForwardSpeed;
-
-                    // TODO: Throw sparks, make noise
-                }
-                else
-                {
-                    IsBraking = false;
-                    velocity.Z = NormalForwardSpeed;
-                }
+                IsBraking = EventManager.IsKeyPressed(SDL.SDL_Keycode.SDLK_DOWN);
 
                 if (EventManager.IsKeyPressed(SDL.SDL_Keycode.SDLK_SPACE))
                 {
                     IsJumping = true;
                     velocity.Y = JumpSpeed;
                 }
+            }
+
+            if (IsBraking)
+            {
+                // TODO: Throw sparks, make noise
+                velocity.Z = BrakeForwardSpeed;
+            }
+            else
+            {
+                velocity.Z = NormalForwardSpeed;
             }
 
             transform.Position += velocity * Time.DeltaTime;

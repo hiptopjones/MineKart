@@ -127,10 +127,10 @@ namespace MineKart
 
             RailsMovementComponent movementComponent = new RailsMovementComponent
             {
-                NormalForwardSpeed = 5,
-                BrakeForwardSpeed = 2,
-                JumpSpeed = -50,
-                GravityAcceleration = 500
+                NormalForwardSpeed = 10,
+                BrakeForwardSpeed = 5,
+                JumpSpeed = -20,
+                GravityAcceleration = 100
             };
             player.AddComponent(movementComponent);
 
@@ -163,13 +163,14 @@ namespace MineKart
         private GameObject InitializeFollowCamera()
         {
             GameObject follow = new GameObject();
-            follow.Transform.Position = new Vector3(0, 0, 0);
 
             FollowCameraComponent followComponent = new FollowCameraComponent
             {
+                DefaultPosition = Vector3.Zero,
                 Camera = ServiceLocator.Instance.GetService<Camera>(),
                 FollowObject = ServiceLocator.Instance.GetService<GameObject>("Player"),
-                FollowOffset = new Vector3(0, -1, -2)
+                FollowOffset = new Vector3(0, -1, -2),
+                IsFollowingZ = true
             };
 
             follow.AddComponent(followComponent);
