@@ -47,7 +47,7 @@ namespace SdlEngine
                 }
             }
 
-            CollisionSystem.ProcessCollisions(CollidableGameObjects);
+            CollisionSystem.Update(CollidableGameObjects);
         }
 
         public void LateUpdate()

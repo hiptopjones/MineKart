@@ -8,6 +8,9 @@ namespace SdlEngine
 {
     public class GameObject
     {
+        // Helps with debugging
+        public string Name { get; set; } = "Anonymous";
+
         public TransformComponent Transform { get; set; }
         public bool IsAlive { get; set; } = true;
 
@@ -87,6 +90,11 @@ namespace SdlEngine
             {
                 drawableComponent.Render();
             }
+        }
+
+        public override string ToString()
+        {
+            return $"G[ {Name}: {Transform.Position} ]";
         }
     }
 }

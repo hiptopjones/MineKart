@@ -8,14 +8,14 @@ namespace SdlEngine
 {
     class DrawableSystem
     {
-        public void Render(List<GameObject> gameObjects)
+        public void Render(List<GameObject> drawableObjects)
         {
             // TODO: Use a more efficient structure / method (like sorted set?)
-            foreach (GameObject gameObject in gameObjects.OrderByDescending(x => x.Transform.Position.Z))
+            foreach (GameObject drawableObject in drawableObjects.OrderByDescending(x => x.Transform.Position.Z))
             {
-                if (gameObject.IsAlive)
+                if (drawableObject.IsAlive)
                 {
-                    gameObject.Render();
+                    drawableObject.Render();
                 }
             }
         }

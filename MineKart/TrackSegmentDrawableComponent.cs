@@ -141,7 +141,7 @@ namespace MineKart
                 return;
             }
 
-            Debug.DrawText($"Segment {TrackSegment.SegmentId}: {currentSegmentScreenRect}");
+            //Debug.DrawText($"Segment {TrackSegment.SegmentId}: {currentSegmentScreenRect}");
 
             Vector3 screenDeltaPositionStep = screenDeltaPosition / screenDeltaPosition.Y;
             Vector3 screenDeltaPositionAccumulated = Vector3.Zero;

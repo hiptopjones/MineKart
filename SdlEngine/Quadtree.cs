@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ namespace SdlEngine
     }
 
     // Recursive data structure
+    // Based on this article: https://thatgamesguy.co.uk/cpp-game-dev-16/
     public class Quadtree
     {
         // Couple of things about this code...
@@ -51,25 +53,26 @@ namespace SdlEngine
 
             if (Entries.Count > MaxEntries)
             {
-                Split();
-
-                // Avoid forearch as we're mutating the list
-                // Use swap-and-pop to avoid shifting elements
-                int i = 0;
-                while (i < Entries.Count)
+                if (Split())
                 {
-                    int childIndex = GetChildIndex(Entries[i].BoundingBox);
-                    if (childIndex != CurrentTree)
+                    // Avoid forearch as we're mutating the list
+                    // Use swap-and-pop to avoid shifting elements
+                    int i = 0;
+                    while (i < Entries.Count)
                     {
-                        Children[childIndex].Add(Entries[i]);
+                        int childIndex = GetChildIndex(Entries[i].BoundingBox);
+                        if (childIndex != CurrentTree)
+                        {
+                            Children[childIndex].Add(Entries[i]);
 
-                        int lastIndex = Entries.Count - 1;
-                        Entries[i] = Entries[lastIndex];
-                        Entries.RemoveAt(lastIndex);
-                    }
-                    else
-                    {
-                        i++;
+                            int lastIndex = Entries.Count - 1;
+                            Entries[i] = Entries[lastIndex];
+                            Entries.RemoveAt(lastIndex);
+                        }
+                        else
+                        {
+                            i++;
+                        }
                     }
                 }
             }
@@ -191,10 +194,17 @@ namespace SdlEngine
             return childIndex;
         }
 
-        private void Split()
+        private bool Split()
         {
             int childWidth = (int)(BoundingBox.Width / 2);
             int childHeight = (int)(BoundingBox.Height / 2);
+
+            // If splitting will result in zero-sized bounds, then we can't do it
+            if (childWidth == 0 || childHeight == 0)
+            {
+                //Debugger.Break();
+                return false;
+            }
 
             Children[NorthwestChild] = new Quadtree
             {
@@ -227,6 +237,8 @@ namespace SdlEngine
                 MaxEntries = MaxEntries,
                 BoundingBox = new Rect3(BoundingBox.X, BoundingBox.Y + childHeight, childWidth, childHeight)
             };
+
+            return true;
         }
     }
 }

@@ -61,7 +61,10 @@ namespace MineKart
 
         private GameObject InitializeDebug()
         {
-            GameObject debug = new GameObject();
+            GameObject debug = new GameObject
+            {
+                Name = "Debug"
+            };
 
             DebugComponent debugComponent = new DebugComponent();
             debug.AddComponent(debugComponent);
@@ -71,7 +74,10 @@ namespace MineKart
 
         private GameObject InitializeTrackGenerator()
         {
-            GameObject trackGenerator = new GameObject();
+            GameObject trackGenerator = new GameObject
+            {
+                Name = "TrackGenerator"
+            };
 
             TrackGeneratorComponent trackGeneratorComponent = new TrackGeneratorComponent
             {
@@ -86,7 +92,10 @@ namespace MineKart
 
         private GameObject InitializePlayer()
         {
-            GameObject player = new GameObject();
+            GameObject player = new GameObject
+            {
+                Name = "Player"
+            };
             player.Transform.Position = new Vector3(0, 1, 3);
 
             RailsMovementComponent movementComponent = new RailsMovementComponent
@@ -126,7 +135,10 @@ namespace MineKart
 
         private GameObject InitializeFollowCamera()
         {
-            GameObject follow = new GameObject();
+            GameObject follow = new GameObject
+            {
+                Name = "Follow"
+            };
 
             FollowCameraComponent followComponent = new FollowCameraComponent
             {
