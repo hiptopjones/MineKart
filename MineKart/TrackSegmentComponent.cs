@@ -9,10 +9,12 @@ namespace MineKart
 {
     public enum TrackSegmentType
     {
-        Start,
-        Finish,
-        Checkpoint,
-        Normal
+        Track,
+        TrackBreaking,
+        HoleEntering,
+        Hole,
+        HoleExiting,
+        TrackFixing,
     }
 
     public class TrackSegmentComponent : Component

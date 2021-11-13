@@ -13,13 +13,35 @@ namespace MineKart
 
         public static List<TrackSegmentComponent> GenerateTrack()
         {
-            AddSection(TrackSegmentType.Normal, 10, 0, 0);
-            AddSection(TrackSegmentType.Start, 1, 0, 0);
-            AddSection(TrackSegmentType.Normal, 10, 0.2, -0.1);
-            AddSection(TrackSegmentType.Checkpoint, 1, 0, 0);
-            AddSection(TrackSegmentType.Normal, 10, -0.2, 0.1);
-            AddSection(TrackSegmentType.Finish, 1, 0, 0);
-            AddSection(TrackSegmentType.Normal, 10, 0, 0);
+            AddSection(TrackSegmentType.Track, 10, 0, 0);
+            AddSection(TrackSegmentType.Track, 10, 0.2, -0.1);
+
+            AddSection(TrackSegmentType.Track, 5, 0, 0);
+            AddSection(TrackSegmentType.TrackBreaking, 1, 0, 0);
+            AddSection(TrackSegmentType.HoleEntering, 1, 0, 0);
+            AddSection(TrackSegmentType.Hole, 3, 0, 0);
+            AddSection(TrackSegmentType.HoleExiting, 1, 0, 0);
+            AddSection(TrackSegmentType.TrackFixing, 1, 0, 0);
+            AddSection(TrackSegmentType.Track, 5, 0, 0);
+
+            AddSection(TrackSegmentType.Track, 5, 0, 0);
+            AddSection(TrackSegmentType.TrackBreaking, 1, 0, 0);
+            AddSection(TrackSegmentType.HoleEntering, 1, 0, 0);
+            AddSection(TrackSegmentType.Hole, 3, 0, 0);
+            AddSection(TrackSegmentType.HoleExiting, 1, 0, 0);
+            AddSection(TrackSegmentType.TrackFixing, 1, 0, 0);
+            AddSection(TrackSegmentType.Track, 5, 0, 0);
+
+            AddSection(TrackSegmentType.Track, 5, 0, 0);
+            AddSection(TrackSegmentType.TrackBreaking, 1, 0, 0);
+            AddSection(TrackSegmentType.HoleEntering, 1, 0, 0);
+            AddSection(TrackSegmentType.Hole, 3, 0, 0);
+            AddSection(TrackSegmentType.HoleExiting, 1, 0, 0);
+            AddSection(TrackSegmentType.TrackFixing, 1, 0, 0);
+            AddSection(TrackSegmentType.Track, 5, 0, 0);
+
+            AddSection(TrackSegmentType.Track, 10, -0.2, 0.1);
+            AddSection(TrackSegmentType.Track, 10, 0, 0);
 
             PostProcessTrack();
             return Segments;

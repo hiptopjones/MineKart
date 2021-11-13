@@ -28,16 +28,6 @@ namespace MineKart
             // Make the player available to the locator
             ServiceLocator.Instance.ProvideService("Player", player);
 
-            //GameObjects.AddRange(
-            //    new[] {
-            //        InitializeEnemy(new Vector3(1, 1, 5)),
-            //        InitializeEnemy(new Vector3(1, 1, 4)),
-            //        InitializeEnemy(new Vector3(-1, 1, 5)),
-            //        InitializeEnemy(new Vector3(-1, 1, 4)),
-            //        InitializeEnemy(new Vector3(0, 1, 5)),
-            //        InitializeEnemy(new Vector3(0, 1, 4))
-            //    });
-
             GameObject follow = InitializeFollowCamera();
             GameObjects.Add(follow);
 
@@ -92,8 +82,8 @@ namespace MineKart
 
                 TrackSegmentDrawableComponent drawableComponent = new TrackSegmentDrawableComponent
                 {
-                    TextureFilePath = "Assets\\segment.png"
-                };
+                    TextureFilePath = GetTrackSegmentTypeTextureFilePath(segmentComponent.SegmentType)
+            };
 
                 segment.AddComponent(drawableComponent);
 
@@ -103,19 +93,44 @@ namespace MineKart
             return gameObjects;
         }
 
+        private string GetTrackSegmentTypeTextureFilePath(TrackSegmentType segmentType)
+        {
+            switch (segmentType)
+            {
+                case TrackSegmentType.Track:
+                    return "Assets\\track.png";
+
+                case TrackSegmentType.TrackBreaking:
+                    return "Assets\\track-breaking.png";
+
+                case TrackSegmentType.TrackFixing:
+                    return "Assets\\track-fixing.png";
+
+                case TrackSegmentType.HoleEntering:
+                    return "Assets\\hole-entering.png";
+
+                case TrackSegmentType.Hole:
+                    return "Assets\\hole.png";
+
+                case TrackSegmentType.HoleExiting:
+                    return "Assets\\hole-exiting.png";
+
+                default:
+                    throw new Exception($"Unhandled segment type: {segmentType}");
+            }
+        }
+
         private GameObject InitializePlayer()
         {
             GameObject player = new GameObject();
             player.Transform.Position = new Vector3(0, 1, 3);
 
-            BasicMovementComponent movementComponent = new BasicMovementComponent
+            RailsMovementComponent movementComponent = new RailsMovementComponent
             {
-                BoundingBox = new Rect3(-10, -10, 0, 20, 20, 100),
-                //LeftRightVelocity = new Vector3(2, 0, 0),
-                UpDownVelocity = new Vector3(0, 0, -2),
-                //InOutVelocity = new Vector3(0, -2, 0),
-                ShiftSpeedMultiplier = 0.05,
-                CtrlSpeedMultiplier = 5
+                NormalForwardSpeed = 5,
+                BrakeForwardSpeed = 2,
+                JumpSpeed = -50,
+                GravityAcceleration = 500
             };
             player.AddComponent(movementComponent);
 
@@ -123,7 +138,6 @@ namespace MineKart
             {
                 TextureFilePath = "Assets\\player.png",
                 NormalizedOrigin = new Vector3(0.5, 1.0),
-                //ClippingRect = new Rect3(53, 113)
             };
             player.AddComponent(spriteComponent);
 
@@ -144,29 +158,6 @@ namespace MineKart
             player.AddComponent(debugComponent);
 
             return player;
-        }
-
-        private GameObject InitializeEnemy(Vector3 position)
-        {
-            GameObject enemy = new GameObject();
-            enemy.Transform.Position = position;
-
-            SpriteComponent spriteComponent = new SpriteComponent
-            {
-                TextureFilePath = "Assets\\player.png",
-                NormalizedOrigin = new Vector3(0.5, 1.0),
-                ClippingRect = new Rect3(53, 113)
-            };
-            enemy.AddComponent(spriteComponent);
-
-            BoxColliderComponent boxColliderComponent = new BoxColliderComponent
-            {
-                BoundingBox = new Rect3(-0.1, -0.1, -0.1, 0.2, 0.2, 0.2),
-                Collider = new BoxCollider()
-            };
-            enemy.AddComponent(boxColliderComponent);
-
-            return enemy;
         }
 
         private GameObject InitializeFollowCamera()

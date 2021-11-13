@@ -14,7 +14,7 @@ namespace SdlEngine
         public GameObject FollowObject { get; set; }
         public Vector3 FollowOffset { get; set; }
 
-        private bool IsFollowing { get; set; }
+        private bool IsFollowing { get; set; } = true;
 
         public override void Awake()
         {

@@ -16,7 +16,7 @@ namespace SdlEngine
         private static Vector3 TextLineOffset { get; set; } = new Vector3(0, 13, 0);
         private static Color DefaultColor { get; set; } = Color.Yellow;
 
-        public static bool IsEnabled { get; set; } = true;
+        public static bool IsEnabled { get; set; }
 
         public static void DrawLine(Vector3 from, Vector3 to)
         {
