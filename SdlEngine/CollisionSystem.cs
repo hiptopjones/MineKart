@@ -11,6 +11,9 @@ namespace SdlEngine
         private Quadtree CollisionTree { get; set; }
         private Dictionary<GameObject, QuadtreeEntry> EntryMap { get; set; } = new Dictionary<GameObject, QuadtreeEntry>();
 
+        // Active collisions
+        private Dictionary<string, KeyValuePair<GameObject, GameObject>> CollisionMap { get; set; } = new Dictionary<string, KeyValuePair<GameObject, GameObject>>();
+
         public CollisionSystem()
         {
             CollisionTree = new Quadtree
@@ -22,7 +25,7 @@ namespace SdlEngine
             };
         }
 
-        public void Update(List<GameObject> collidableObjects)
+        public void Update(List<GameObject> collidableObjects)  
         {
             CollisionTree.Clear();
 
@@ -54,6 +57,8 @@ namespace SdlEngine
 
         private void CheckCollisions(List<GameObject> collidableObjects)
         {
+            HashSet<string> checkedCollisions = new HashSet<string>();
+
             foreach (GameObject collidableObject in collidableObjects)
             {
                 BoxColliderComponent boxColliderComponent1 = collidableObject.GetComponent<BoxColliderComponent>();
@@ -71,13 +76,84 @@ namespace SdlEngine
                         continue;
                     }
 
-                    Collision collision;
-                    if (boxColliderComponent1.Intersects(boxColliderComponent2, out collision))
+                    GameObject gameObject1 = boxColliderComponent1.Owner;
+                    GameObject gameObject2 = boxColliderComponent2.Owner;
+                    string key = MakeKey(gameObject1, gameObject2);
+
+                    // Enforce only checking a pair of objects once per frame
+                    if (checkedCollisions.Contains(key))
                     {
-                        // TODO: Raise some event so the collision can be handled meaningfully
-                        Debug.DrawText($"{boxColliderComponent1.Owner.Name} -> {boxColliderComponent2.Owner.Name}");
+                        continue;
+                    }
+
+                    checkedCollisions.Add(key);
+
+                    Collision collision;
+                    bool isColliding = boxColliderComponent1.Intersects(boxColliderComponent2, out collision);
+                    bool wasColliding = CollisionMap.ContainsKey(key);
+
+                    if (isColliding || wasColliding)
+                    {
+                        if (isColliding)
+                        {
+                            Debug.DrawText($"Collision Enter/Stay: {gameObject1.Name} -> {gameObject2.Name}");
+                            CollisionMap[key] = new KeyValuePair<GameObject, GameObject>(gameObject1, gameObject2);
+                        }
+                        else
+                        {
+                            Debug.DrawText($"Collision Exit: {gameObject1.Name} -> {gameObject2.Name}");
+                            CollisionMap.Remove(key);
+                        }
+
+                        // Raise events in both directions so the collision can be handled meaningfully
+                        NotifyCollisionEvent(isColliding, wasColliding, gameObject1, gameObject2);
+                        NotifyCollisionEvent(isColliding, wasColliding, gameObject2, gameObject1);
                     }
                 }
+            }
+        }
+
+        private void NotifyCollisionEvent(bool isColliding, bool wasColliding, GameObject sourceGameObject, GameObject targetGameObject)
+        {
+            CollisionHandlerComponent collisionHandlerComponent = targetGameObject.GetComponent<CollisionHandlerComponent>();
+            if (collisionHandlerComponent != null)
+            {
+                if (isColliding)
+                {
+                    if (wasColliding)
+                    {
+                        Debug.DrawText($"Collision Stay: {sourceGameObject.Name} -> {targetGameObject.Name}");
+                        collisionHandlerComponent.OnCollisionStay(sourceGameObject);
+                    }
+                    else
+                    {
+                        Debug.DrawText($"Collision Enter: {sourceGameObject.Name} -> {targetGameObject.Name}");
+                        collisionHandlerComponent.OnCollisionEnter(sourceGameObject);
+                    }
+                }
+                else
+                {
+                    if (wasColliding)
+                    {
+                        // TODO: Objects that get removed from the scene may not receive an exit call
+                        Debug.DrawText($"Collision Exit: {sourceGameObject.Name} -> {targetGameObject.Name}");
+                        collisionHandlerComponent.OnCollisionExit(sourceGameObject);
+                    }
+                }
+            }
+        }
+
+        // Creates a key that uniquely represents a pair of objects, regardless of the order they are provided
+        // TODO: Consider Szudsik's elegant pairing algorithm for this (more efficient)
+        private string MakeKey(GameObject gameObject1, GameObject gameObject2)
+        {
+            if (gameObject1.Id < gameObject2.Id)
+            {
+                return $"{gameObject1.Id}-{gameObject2.Id}";
+            }
+            else
+            {
+                return $"{gameObject2.Id}-{gameObject1.Id}";
             }
         }
     }

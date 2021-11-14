@@ -41,7 +41,12 @@ namespace SdlEngine
                     ToObject = boxColliderComponent.Owner
                 };
 
-                DrawBoundingBoxes(boxCollider1, boxCollider2);
+                // This is a bunch of math, so don't bother if Debug isn't enabled
+                if (Debug.IsEnabled)
+                {
+                    DrawBoundingBoxes(boxCollider1, boxCollider2);
+                }
+
                 return true;
             }
 

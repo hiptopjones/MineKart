@@ -26,6 +26,18 @@ namespace SdlEngine
             {
                 Debug.IsEnabled = !Debug.IsEnabled;
             }
+
+            if (EventManager.IsKeyDown(SDL.SDL_Keycode.SDLK_t))
+            {
+                if (Time.TimeScale != 0)
+                {
+                    Time.TimeScale = 0;
+                }
+                else
+                {
+                    Time.TimeScale = 1;
+                }
+            }
         }
     }
 }

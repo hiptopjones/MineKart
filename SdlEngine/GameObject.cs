@@ -8,6 +8,10 @@ namespace SdlEngine
 {
     public class GameObject
     {
+        private static int NextId = 0;
+
+        public int Id { get; private set; }
+
         // Helps with debugging
         public string Name { get; set; } = "Anonymous";
 
@@ -23,6 +27,7 @@ namespace SdlEngine
 
         private void Initialize()
         {
+            Id = NextId++;
             Transform = new TransformComponent();
             AddComponent(Transform);
         }

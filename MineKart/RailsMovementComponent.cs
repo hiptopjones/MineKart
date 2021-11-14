@@ -17,6 +17,7 @@ namespace MineKart
 
         public bool IsBraking { get; set; }
         public bool IsJumping { get; set; }
+        public bool IsFalling { get; set; }
 
         public double VerticalSpeed { get; set; }
 
@@ -37,22 +38,9 @@ namespace MineKart
 
             Vector3 velocity = Vector3.Zero;
 
-            if (IsJumping)
+            if (IsJumping || IsFalling)
             {
-                // TODO: Need a way to get the current segment (for detecting ground, and for checking collisions)
-                if (transform.Position.Y < 1)
-                {
-                    velocity.Y = VerticalSpeed;
-                }
-                else
-                {
-                    IsJumping = false;
-
-                    // TODO: Set position back onto track
-                    transform.Position = new Vector3(transform.Position.X, 1, transform.Position.Z);
-
-                    // TODO: Throw sparks, make noise, animate rumble
-                }
+                velocity.Y = VerticalSpeed;
             }
             else
             {
@@ -77,10 +65,33 @@ namespace MineKart
 
             transform.Position += velocity * Time.DeltaTime;
 
-            if (IsJumping)
+            if (IsJumping || IsFalling)
             {
                 VerticalSpeed = velocity.Y + GravityAcceleration * Time.DeltaTime;
             }
+        }
+
+        public void StartFalling()
+        {
+            IsJumping = false;
+            IsBraking = false;
+
+            IsFalling = true;
+        }
+
+        public void StopJumping()
+        {
+            if (IsFalling || false == IsJumping)
+            {
+                return;
+            }
+
+            IsJumping = false;
+
+            TransformComponent transform = Owner.Transform;
+            transform.Position = new Vector3(transform.Position.X, 1, transform.Position.Z);
+
+            // TODO: Throw sparks, make noise, animate rumble
         }
     }
 }

@@ -130,6 +130,9 @@ namespace MineKart
             };
             player.AddComponent(debugComponent);
 
+            TrackCollisionHandlerComponent collisionHandlerComponent = new TrackCollisionHandlerComponent();
+            player.AddComponent(collisionHandlerComponent);
+
             return player;
         }
 
