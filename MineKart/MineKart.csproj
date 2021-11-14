@@ -66,6 +66,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PlayerCollisionHandlerComponent.cs" />
+    <Compile Include="TrackCollection.cs" />
     <Compile Include="TrackGeneratorComponent.cs" />
     <Compile Include="TrackSegmentComponent.cs" />
     <Compile Include="TrackSegmentDrawableComponent.cs" />
@@ -99,9 +100,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\hole-entering.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\hole-exiting.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\hole.png">

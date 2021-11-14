@@ -12,18 +12,21 @@ namespace MineKart
         public int GenerateDistance { get; set; }  // Distance ahead of the player to generate
         public int PruneDistance { get; set; } // Distance it must be from player before segment can be pruned
 
+        private TrackCollection TrackCollection { get; set; }
+
         private GameObject Player { get; set; }
         private GameObjectCollection SceneObjects { get; set; }
-
-        private Dictionary<int, GameObject> TrackSegments { get; set; } = new Dictionary<int, GameObject>();
-
-        private int FirstActiveObjectIndex { get; set; } = -1;
-        private int LastActiveObjectIndex { get; set; } = -1;
 
         private Random Random { get; set; } = new Random();
 
         public override void Awake()
         {
+            TrackCollection = ServiceLocator.Instance.GetService<TrackCollection>();
+            if (TrackCollection == null)
+            {
+                throw new Exception($"Unable to retrieve track collection from service locator");
+            }
+
             Player = ServiceLocator.Instance.GetService<GameObject>("Player");
             if (Player == null)
             {
@@ -43,7 +46,7 @@ namespace MineKart
             TrackSegmentComponent previousSegmentComponent = GenerateStraight(null, 10);
             GenerateHill(previousSegmentComponent, 20, -0.2);
 
-            FirstActiveObjectIndex = 0;
+            TrackCollection.FirstActiveObjectIndex = 0;
         }
 
         public override void Update()
@@ -51,9 +54,9 @@ namespace MineKart
             PruneTrack();
 
             //Debug.DrawText($"Total GameObjects: {SceneObjects.GameObjects.Count}");
-            //Debug.DrawText($"Active: {TrackSegments.Count}");
-            //Debug.DrawText($"First: {FirstActiveObjectIndex}");
-            //Debug.DrawText($"Last:  {LastActiveObjectIndex}");
+            //Debug.DrawText($"Active: {TrackCollection.TrackSegments.Count}");
+            //Debug.DrawText($"First: {TrackCollection.FirstActiveObjectIndex}");
+            //Debug.DrawText($"Last:  {TrackCollection.LastActiveObjectIndex}");
 
             GrowTrack();
         }
@@ -63,7 +66,7 @@ namespace MineKart
             // If we break in the debugger too long, the player could be way ahead of track generation.
             //  - Do not assume the player Z has track
             //  - Do not prune the last object in the list (used for previous elsewhere)
-            for (int segmentId = FirstActiveObjectIndex; segmentId < LastActiveObjectIndex; segmentId++)
+            for (int segmentId = TrackCollection.FirstActiveObjectIndex; segmentId < TrackCollection.LastActiveObjectIndex; segmentId++)
             {
                 int playerZ = (int)Player.Transform.Position.Z;
                 if (segmentId > playerZ - PruneDistance)
@@ -71,26 +74,26 @@ namespace MineKart
                     break;
                 }
 
-                GameObject gameObject = TrackSegments[segmentId];
+                GameObject gameObject = TrackCollection.TrackSegments[segmentId];
 
                 // Causes the object to be removed from the scene object collection
-                gameObject.IsAlive = false;
+                gameObject.Destroy();
 
-                if (segmentId != FirstActiveObjectIndex)
+                if (segmentId != TrackCollection.FirstActiveObjectIndex)
                 {
-                    throw new Exception($"Segment ID mismatch: {segmentId} != {FirstActiveObjectIndex}");
+                    throw new Exception($"Segment ID mismatch: {segmentId} != {TrackCollection.FirstActiveObjectIndex}");
                 }
 
-                TrackSegments.Remove(segmentId);
-                FirstActiveObjectIndex++;
+                TrackCollection.TrackSegments.Remove(segmentId);
+                TrackCollection.FirstActiveObjectIndex++;
             }
         }
 
         public void GrowTrack()
         {
-            TrackSegmentComponent previousSegmentComponent = TrackSegments[LastActiveObjectIndex].GetComponent<TrackSegmentComponent>();
+            TrackSegmentComponent previousSegmentComponent = TrackCollection.TrackSegments[TrackCollection.LastActiveObjectIndex].GetComponent<TrackSegmentComponent>();
 
-            while (LastActiveObjectIndex < Player.Transform.Position.Z + GenerateDistance)
+            while (TrackCollection.LastActiveObjectIndex < Player.Transform.Position.Z + GenerateDistance)
             {
                 // TODO: Add percent settings to the GameSettings
 
@@ -164,7 +167,7 @@ namespace MineKart
             previousSegmentComponent = AddTrackSegment(previousSegmentComponent, TrackSegmentType.HoleEntering);
             previousSegmentComponent = AddTrackSegment(previousSegmentComponent, TrackSegmentType.Hole);
             previousSegmentComponent = AddTrackSegment(previousSegmentComponent, TrackSegmentType.Hole);
-            previousSegmentComponent = AddTrackSegment(previousSegmentComponent, TrackSegmentType.HoleExiting);
+            previousSegmentComponent = AddTrackSegment(previousSegmentComponent, TrackSegmentType.Hole);
             previousSegmentComponent = AddTrackSegment(previousSegmentComponent, TrackSegmentType.TrackFixing);
             previousSegmentComponent = AddTrackSegment(previousSegmentComponent, TrackSegmentType.Track);
             previousSegmentComponent = AddTrackSegment(previousSegmentComponent, TrackSegmentType.Track);
@@ -223,12 +226,12 @@ namespace MineKart
             };
             segment.AddComponent(boxColliderComponent);
 
-            TrackSegments[segmentId] = segment;
-            LastActiveObjectIndex++;
+            TrackCollection.TrackSegments[segmentId] = segment;
+            TrackCollection.LastActiveObjectIndex++;
 
-            if (segmentId != LastActiveObjectIndex)
+            if (segmentId != TrackCollection.LastActiveObjectIndex)
             {
-                throw new Exception($"Segment ID mismatch: {segmentId} != {LastActiveObjectIndex}");
+                throw new Exception($"Segment ID mismatch: {segmentId} != {TrackCollection.LastActiveObjectIndex}");
             }
 
             // Add to scene object collection
@@ -255,9 +258,6 @@ namespace MineKart
 
                 case TrackSegmentType.Hole:
                     return "Assets\\hole.png";
-
-                case TrackSegmentType.HoleExiting:
-                    return "Assets\\hole-exiting.png";
 
                 default:
                     throw new Exception($"Unhandled segment type: {segmentType}");

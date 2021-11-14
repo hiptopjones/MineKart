@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace MineKart
 {
+    // TODO: This should just be a particle system
     class ExplosionSpawnerComponent : Component
     {
         public string TextureFilePath { get; set; }

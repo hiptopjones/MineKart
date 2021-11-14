@@ -28,6 +28,9 @@ namespace MineKart
             GameObject follow = InitializeFollowCamera();
             GameObjects.Add(follow);
 
+            TrackCollection track = new TrackCollection();
+            ServiceLocator.Instance.ProvideService<TrackCollection>(track);
+
             GameObject trackGenerator = InitializeTrackGenerator();
             GameObjects.Add(trackGenerator);
 
@@ -134,12 +137,12 @@ namespace MineKart
 
             ExplosionSpawnerComponent explosionComponent = new ExplosionSpawnerComponent
             {
-                NumRocks = 100,
-                MaxSpeed = 25,
+                NumRocks = 200,
+                MaxSpeed = 35,
                 MinSpeed = 15,
                 NumSpritesX = 4,
                 NumSpritesY = 2,
-                SpawnSpeed = 1000,
+                SpawnSpeed = 2000,
                 SpriteWidth = 70,
                 SpriteHeight = 70,
                 GravityAcceleration = 200,

@@ -13,7 +13,6 @@ namespace MineKart
         TrackBreaking,
         HoleEntering,
         Hole,
-        HoleExiting,
         TrackFixing,
     }
 

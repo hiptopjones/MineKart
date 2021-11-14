@@ -29,15 +29,33 @@ namespace MineKart
 
         public override void OnCollisionEnter(GameObject other)
         {
-            TrackSegmentComponent segmentComponent = other.GetComponent<TrackSegmentComponent>();
-            if (segmentComponent == null)
-            {
-                return;
-            }
-
+            bool isDead = false;
             RailsMovementComponent movementComponent = Owner.GetComponent<RailsMovementComponent>();
 
-            if (segmentComponent.SegmentType == TrackSegmentType.Hole || segmentComponent.SegmentType == TrackSegmentType.HoleExiting)
+            TrackSegmentComponent segmentComponent = other.GetComponent<TrackSegmentComponent>();
+            if (segmentComponent != null)
+            {
+                if (segmentComponent.SegmentType == TrackSegmentType.Hole)
+                {
+                    // Fell in a hole
+                    isDead = true;
+                }
+                else
+                {
+                    movementComponent.StopJumping();
+                }
+            }
+            else
+            {
+                EnemyMovementComponent enemyComponent = other.GetComponent<EnemyMovementComponent>();
+                if (enemyComponent != null)
+                {
+                    // Collided with the enemy
+                    isDead = true;
+                }
+            }
+
+            if (isDead)
             {
                 movementComponent.StartFalling();
 
@@ -46,10 +64,6 @@ namespace MineKart
 
                 // After some delay, go to end screen
                 EventManager.RequestCallback(GameSettings.EndScreenDelay, () => { SceneManager.SwitchTo((int)SceneType.EndScreen); });
-            }
-            else
-            {
-                movementComponent.StopJumping();
             }
         }
     }

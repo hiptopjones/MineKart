@@ -71,12 +71,13 @@ namespace MineKart
             {
                 TextureFilePath = "Assets\\enemy.png",
                 NormalizedOrigin = new Vector3(0.5, 1.0),
+                UseTransformPosition = false
             };
             enemy.AddComponent(spriteComponent);
 
             BoxColliderComponent boxColliderComponent = new BoxColliderComponent
             {
-                BoundingBox = new Rect3(-0.1, -0.1, -0.1, 0.2, 0.2, 0.2),
+                BoundingBox = new Rect3(-0.1, -0.1, -0.25, 0.2, 0.2, 0.5),
                 Collider = new BoxCollider()
             };
             enemy.AddComponent(boxColliderComponent);

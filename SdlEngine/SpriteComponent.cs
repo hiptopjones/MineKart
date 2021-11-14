@@ -18,6 +18,9 @@ namespace SdlEngine
 
         public Vector3 NormalizedOrigin { get; set; } = new Vector3(0, 0);
 
+        public Vector3 DrawPosition { get; set; } // Position to render at
+        public bool UseTransformPosition { get; set; } = true; // If true, DrawPosition will follow Transform.Position
+
         // Private variables below here
         private Texture SpriteTexture { get; set; } // TODO: Use a weak reference?
 
@@ -53,7 +56,10 @@ namespace SdlEngine
 
         public override void Render()
         {
-            TransformComponent transform = Owner.Transform;
+            if (UseTransformPosition)
+            {
+                DrawPosition = Owner.Transform.Position;
+            }
 
             Rect3 clippingRect = ClippingRect ?? new Rect3
             {
@@ -63,7 +69,7 @@ namespace SdlEngine
                 Height = SpriteTexture.Height
             };
 
-            Rect3 projectedTargetRect = Camera.ProjectSpriteToScreen(transform.Position, clippingRect);
+            Rect3 projectedTargetRect = Camera.ProjectSpriteToScreen(DrawPosition, clippingRect);
 
             Vector3 origin = new Vector3
             {

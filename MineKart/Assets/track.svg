@@ -26,10 +26,10 @@
      showgrid="false"
      showborder="false"
      inkscape:object-paths="true"
-     inkscape:snap-global="false"
-     inkscape:zoom="0.22627417"
-     inkscape:cx="-2801.9106"
-     inkscape:cy="373.44077"
+     inkscape:snap-global="true"
+     inkscape:zoom="0.64"
+     inkscape:cx="793.75"
+     inkscape:cy="2280.4688"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
      inkscape:window-x="-8"
@@ -39,6 +39,18 @@
      inkscape:snap-nodes="true" />
   <defs
      id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient274838">
+      <stop
+         style="stop-color:#575757;stop-opacity:1"
+         offset="0"
+         id="stop274834" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0"
+         offset="1"
+         id="stop274836" />
+    </linearGradient>
     <rect
        x="-2178.1203"
        y="2198.8643"
@@ -53,26 +65,26 @@
          offset="0"
          id="stop22485" />
       <stop
-         style="stop-color:#000000;stop-opacity:1"
+         style="stop-color:#000000;stop-opacity:0"
          offset="1"
          id="stop22487" />
     </linearGradient>
     <linearGradient
        inkscape:collect="always"
-       xlink:href="#linearGradient22489"
+       xlink:href="#linearGradient274838"
        id="linearGradient22491"
        x1="0"
        y1="485.66666"
        x2="100"
        y2="485.66666"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(-682.93386,-315.66666)" />
+       gradientTransform="translate(-782.93386,-315.66666)" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient22489"
        id="linearGradient29168"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(382.93381,-655.66666)"
+       gradientTransform="translate(282.93381,-655.66666)"
        x1="0"
        y1="485.66666"
        x2="100"
@@ -398,18 +410,15 @@
        inkscape:export-ydpi="25.4"
        transform="matrix(0.96370412,0.2669726,-0.25210709,0.96769934,0,0)" />
     <g
-       id="g34146"
-       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\hole-entering.png"
-       inkscape:export-xdpi="25.4"
-       inkscape:export-ydpi="25.4">
+       id="g274113">
       <rect
-         style="fill:url(#linearGradient22491);fill-opacity:1;fill-rule:evenodd;stroke-width:0.330322"
-         id="rect20971"
+         style="fill:#000000;fill-opacity:0;fill-rule:evenodd;stroke:none;stroke-width:0.330322;stroke-opacity:1"
+         id="rect25779"
          width="100"
          height="340"
          x="-682.93384"
          y="0"
-         inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\hole-entering.png"
+         inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\hole.png"
          inkscape:export-xdpi="25.4"
          inkscape:export-ydpi="25.4"
          transform="rotate(-90)" />
@@ -434,198 +443,174 @@
          d="m 266.11393,585.32107 8.26384,3.25531 -8.68083,16.10662 -5.78721,20.11056 3.90637,24.3063 -3.3782,33.51056 h -10 l 3.3782,-33.36588 -3.90637,-26.4765 6.07657,-19.38716 z"
          sodipodi:nodetypes="ccccccccccc" />
     </g>
-    <rect
-       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.330322;stroke-opacity:1"
-       id="rect25779"
-       width="100"
-       height="340"
-       x="-582.93384"
-       y="0"
-       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\hole.png"
-       inkscape:export-xdpi="25.4"
-       inkscape:export-ydpi="25.4"
-       transform="rotate(-90)" />
-    <rect
-       style="fill:url(#linearGradient29168);fill-opacity:1;fill-rule:evenodd;stroke-width:0.330322"
-       id="rect29166"
-       width="100"
-       height="340"
-       x="382.93384"
-       y="-340"
-       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\hole-exiting.png"
-       inkscape:export-xdpi="25.4"
-       inkscape:export-ydpi="25.4"
-       transform="rotate(90)" />
     <g
-       id="g29264"
-       transform="rotate(180,170,286.06428)"
-       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\track-fixing.png"
-       inkscape:export-xdpi="25.4"
-       inkscape:export-ydpi="25.4">
+       id="g274000"
+       transform="translate(0,100)">
       <rect
-         style="fill:#575757;fill-opacity:1;fill-rule:evenodd;stroke-width:0.330323"
-         id="rect29226"
-         width="340"
-         height="100"
-         x="3.5527137e-15"
-         y="189.19472"
-         inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
+         style="fill:url(#linearGradient29168);fill-opacity:1;fill-rule:evenodd;stroke-width:0.330322"
+         id="rect29166"
+         width="100"
+         height="340"
+         x="282.93384"
+         y="-340"
+         inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\hole-exiting.png"
          inkscape:export-xdpi="25.4"
-         inkscape:export-ydpi="25.4" />
+         inkscape:export-ydpi="25.4"
+         transform="rotate(90)" />
       <path
          id="path29228"
          style="fill:#8e4617;fill-rule:evenodd;stroke-width:0.242623"
-         d="m 16.78726,223.1814 20.931682,-7.7348 32.879415,15.82613 64.848993,-9.7184 62.90935,5.0994 38.61749,-7.36775 58.88224,-5.06367 26.64238,8.23569 v 50.30642 H 16.78726 Z"
+         d="m 323.21274,348.94716 -20.93168,7.7348 -32.87942,-15.82613 -64.84899,9.7184 -62.90935,-5.0994 -38.61749,7.36775 -58.88224,5.06367 -26.64238,-8.23569 v -50.30642 h 305.71155 z"
          sodipodi:nodetypes="ccccccccccc" />
       <rect
          style="fill:#515151;fill-opacity:1;fill-rule:evenodd;stroke-width:0.0631731"
          id="rect29230"
          width="38.195915"
          height="24.98798"
-         x="-29.942287"
-         y="241.25424"
+         x="-167.12912"
+         y="-409.9837"
          inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
          inkscape:export-xdpi="25.4"
          inkscape:export-ydpi="25.4"
-         transform="rotate(-18.826087)" />
+         transform="rotate(161.17391)" />
       <rect
          style="fill:#515151;fill-opacity:1;fill-rule:evenodd;stroke-width:0.0631731"
          id="rect29232"
          width="38.195915"
          height="24.98798"
-         x="253.63831"
-         y="209.70578"
+         x="-128.51076"
+         y="-335.17325"
          inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
          inkscape:export-xdpi="25.4"
          inkscape:export-ydpi="25.4"
-         transform="rotate(4.3219374)" />
+         transform="rotate(-175.67806)" />
       <path
          id="path29234"
          style="fill:#a05a2c;fill-rule:evenodd;stroke-width:0.240346"
-         d="m 20,225.39891 15.905977,-1.0611 38.74906,15.8185 59.618273,-13.03868 83.90672,6.71536 25.65116,-9.84629 48.96203,-2.78997 26.91742,6.80642 L 320,269.19472 H 20 Z"
+         d="m 320,346.72965 -15.90598,1.0611 -38.74906,-15.8185 -59.61827,13.03868 -83.90672,-6.71536 -25.65116,9.84629 -48.96203,2.78997 L 20.28936,344.12541 20,302.93384 h 300 z"
          sodipodi:nodetypes="ccccccccccc" />
       <rect
          style="fill:#636363;fill-opacity:1;fill-rule:evenodd;stroke-width:0.0610717"
          id="rect29236"
          width="35.697117"
          height="24.98798"
-         x="-28.480114"
-         y="240.18333"
+         x="-165.66695"
+         y="-411.0546"
          inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
          inkscape:export-xdpi="25.4"
          inkscape:export-ydpi="25.4"
-         transform="rotate(-18.826087)" />
+         transform="rotate(161.17391)" />
       <path
          id="path29238"
          style="fill:#8b8b8b;fill-rule:evenodd;stroke-width:0.447584"
-         d="m 38.445035,193.77839 12.39948,-3.74177 9.354433,29.51192 21.393334,26.69517 6.9506,21.48017 v 21.47084 h -14.551 v -20.90957 l -6.062099,-19.57576 -20.130315,-25.6997 z"
+         d="m 301.55496,378.35017 -12.39948,3.74177 -9.35443,-29.51192 -21.39333,-26.69517 -6.9506,-21.48017 v -21.47084 h 14.551 v 20.90957 l 6.0621,19.57576 20.13031,25.6997 z"
          sodipodi:nodetypes="ccccccccccc" />
       <circle
          style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke-width:0.1"
          id="circle29240"
-         cx="0.96999609"
-         cy="246.60881"
+         cx="-136.21684"
+         cy="-404.62912"
          r="2.6772835"
          inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
          inkscape:export-xdpi="25.4"
          inkscape:export-ydpi="25.4"
-         transform="rotate(-18.826087)" />
+         transform="rotate(161.17391)" />
       <path
          id="path29242"
          style="fill:#e5e5e5;fill-rule:evenodd;stroke-width:0.371042"
-         d="m 39.919084,193.31067 9.532016,-2.99341 9.354433,29.97964 21.03774,26.5713 6.557839,21.05768 v 21.26884 H 76.401375 V 268.39085 L 69.98523,248.08898 49.647695,222.54197 Z"
+         d="m 300.08092,378.81789 -9.53202,2.99341 -9.35443,-29.97964 -21.03774,-26.5713 -6.55784,-21.05768 v -21.26884 h 9.99973 v 20.80387 l 6.41615,20.30187 20.33753,25.54701 z"
          sodipodi:nodetypes="ccccccccccc" />
       <circle
          style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke-width:0.1"
          id="circle29244"
-         cx="0.96999609"
-         cy="258.92432"
+         cx="-136.21684"
+         cy="-392.31363"
          r="2.6772835"
          inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
          inkscape:export-xdpi="25.4"
          inkscape:export-ydpi="25.4"
-         transform="rotate(-18.826087)" />
+         transform="rotate(161.17391)" />
       <rect
          style="fill:#636363;fill-opacity:1;fill-rule:evenodd;stroke-width:0.0610717"
          id="rect29246"
          width="35.697117"
          height="24.98798"
-         x="255.10046"
-         y="208.63489"
+         x="-127.04861"
+         y="-336.24414"
          inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
          inkscape:export-xdpi="25.4"
          inkscape:export-ydpi="25.4"
-         transform="rotate(4.3219374)" />
+         transform="rotate(-175.67806)" />
       <path
          id="path29248"
          style="fill:#8b8b8b;fill-rule:evenodd;stroke-width:0.44759"
-         d="m 263.6377,191.2635 12.59607,5.49147 -8.82903,16.00136 -5.06381,18.2992 3.66378,23.96916 -0.0468,34.17003 h -14.55138 l 0.21702,-33.3436 -3.97871,-27.56723 6.43827,-19.91764 z"
+         d="m 76.3623,380.86506 -12.59607,-5.49147 8.82903,-16.00136 5.06381,-18.2992 -3.66378,-23.96916 0.0468,-34.17003 h 14.55138 l -0.21702,33.3436 3.97871,27.56723 -6.43827,19.91764 z"
          sodipodi:nodetypes="ccccccccccc" />
       <circle
          style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke-width:0.1"
          id="circle29250"
-         cx="284.55057"
-         cy="215.06036"
+         cx="-97.598503"
+         cy="-329.81866"
          r="2.6772835"
          inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
          inkscape:export-xdpi="25.4"
          inkscape:export-ydpi="25.4"
-         transform="rotate(4.3219374)" />
+         transform="rotate(-175.67806)" />
       <path
          id="path29252"
          style="fill:#e5e5e5;fill-rule:evenodd;stroke-width:0.371048"
-         d="m 266.11393,191.58195 8.26384,3.25531 -8.68083,16.10662 -5.78721,20.11056 3.90637,24.3063 v 33.83398 h -10 v -33.6893 l -3.90637,-26.4765 6.07657,-19.38716 z"
+         d="m 73.88607,380.54661 -8.26384,-3.25531 8.68083,-16.10662 5.78721,-20.11056 -3.90637,-24.3063 v -33.83398 h 10 v 33.6893 l 3.90637,26.4765 -6.07657,19.38716 z"
          sodipodi:nodetypes="ccccccccccc" />
       <circle
          style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke-width:0.1"
          id="circle29254"
-         cx="-22.500854"
-         cy="246.60881"
+         cx="-159.68768"
+         cy="-404.62912"
          r="2.6772835"
          inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
          inkscape:export-xdpi="25.4"
          inkscape:export-ydpi="25.4"
-         transform="rotate(-18.826087)" />
+         transform="rotate(161.17391)" />
       <circle
          style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke-width:0.1"
          id="circle29256"
-         cx="-22.500854"
-         cy="258.74585"
+         cx="-159.68768"
+         cy="-392.4921"
          r="2.6772835"
          inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
          inkscape:export-xdpi="25.4"
          inkscape:export-ydpi="25.4"
-         transform="rotate(-18.826087)" />
+         transform="rotate(161.17391)" />
       <circle
          style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke-width:0.1"
          id="circle29258"
-         cx="284.55057"
-         cy="227.37585"
+         cx="-97.598503"
+         cy="-317.50317"
          r="2.6772835"
          inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
          inkscape:export-xdpi="25.4"
          inkscape:export-ydpi="25.4"
-         transform="rotate(4.3219374)" />
+         transform="rotate(-175.67806)" />
       <circle
          style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke-width:0.1"
          id="circle29260"
-         cx="261.07971"
-         cy="215.06036"
+         cx="-121.06936"
+         cy="-329.81866"
          r="2.6772835"
          inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
          inkscape:export-xdpi="25.4"
          inkscape:export-ydpi="25.4"
-         transform="rotate(4.3219374)" />
+         transform="rotate(-175.67806)" />
       <circle
          style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke-width:0.1"
          id="circle29262"
-         cx="261.07971"
-         cy="227.19739"
+         cx="-121.06936"
+         cy="-317.68164"
          r="2.6772835"
          inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
          inkscape:export-xdpi="25.4"
          inkscape:export-ydpi="25.4"
-         transform="rotate(4.3219374)" />
+         transform="rotate(-175.67806)" />
     </g>
     <rect
        style="fill:#575757;fill-opacity:1;fill-rule:evenodd;stroke-width:0.330323"
@@ -810,20 +795,18 @@
        inkscape:export-xdpi="25.4"
        inkscape:export-ydpi="25.4" />
     <g
-       id="g34167"
-       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\track-breaking.png"
-       inkscape:export-xdpi="25.4"
-       inkscape:export-ydpi="25.4">
+       id="g274134">
       <rect
-         style="fill:#575757;fill-opacity:1;fill-rule:evenodd;stroke-width:0.330323"
-         id="rect9090"
-         width="340"
-         height="100"
-         x="3.5527137e-15"
-         y="682.93384"
-         inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\segment.png"
+         style="fill:url(#linearGradient22491);fill-opacity:1;fill-rule:evenodd;stroke-width:0.330322"
+         id="rect20971"
+         width="100"
+         height="340"
+         x="-782.93384"
+         y="0"
+         inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\hole-entering.png"
          inkscape:export-xdpi="25.4"
-         inkscape:export-ydpi="25.4" />
+         inkscape:export-ydpi="25.4"
+         transform="rotate(-90)" />
       <path
          id="rect9092"
          style="fill:#8e4617;fill-rule:evenodd;stroke-width:0.242623"
@@ -901,8 +884,7 @@
       <path
          id="circle20963"
          style="fill-rule:evenodd;stroke-width:0.1"
-         transform="rotate(4.3219374)"
-         d="m 324.43629,707.39545 a 2.6772835,2.6772835 0 0 1 -2.67729,2.67728 2.6772835,2.6772835 0 0 1 -2.67728,-2.67728 2.6772835,2.6772835 0 0 1 2.67728,-2.67729 2.6772835,2.6772835 0 0 1 2.67729,2.67729 z" />
+         d="m 270.20402,729.83356 a 2.6772835,2.6772835 0 0 1 -2.87144,2.4679 2.6772835,2.6772835 0 0 1 -2.46791,-2.87143 2.6772835,2.6772835 0 0 1 2.87143,-2.46791 2.6772835,2.6772835 0 0 1 2.46792,2.87144 z" />
       <circle
          style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke-width:0.1"
          id="circle20955"
@@ -926,8 +908,7 @@
       <path
          id="circle20965"
          style="fill-rule:evenodd;stroke-width:0.1"
-         transform="rotate(4.3219374)"
-         d="m 324.43629,719.71094 a 2.6772835,2.6772835 0 0 1 -2.67729,2.67728 2.6772835,2.6772835 0 0 1 -2.67728,-2.67728 2.6772835,2.6772835 0 0 1 2.67728,-2.67729 2.6772835,2.6772835 0 0 1 2.67729,2.67729 z" />
+         d="m 269.27591,742.11402 a 2.6772835,2.6772835 0 0 1 -2.87143,2.46791 2.6772835,2.6772835 0 0 1 -2.46791,-2.87143 2.6772835,2.6772835 0 0 1 2.87143,-2.46791 2.6772835,2.6772835 0 0 1 2.46791,2.87143 z" />
       <circle
          style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke-width:0.1"
          id="circle20967"
@@ -1231,7 +1212,7 @@
        x="-321.30972"
        y="743.9809"
        id="text158498"
-       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\splashscreen.png"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\startscreen.png"
        inkscape:export-xdpi="25.4"
        inkscape:export-ydpi="25.4"><tspan
          sodipodi:role="line"
@@ -1245,7 +1226,7 @@
        x="-278.67136"
        y="751.14154"
        id="text171606"
-       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\splashscreen.png"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\startscreen.png"
        inkscape:export-xdpi="25.4"
        inkscape:export-ydpi="25.4"><tspan
          sodipodi:role="line"
@@ -1255,9 +1236,8 @@
          y="751.14154">with C# and SDL2</tspan></text>
     <path
        id="rect189786"
-       style="fill:#e9e9e9;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.377953;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m -3236.0645,-3222.2344 v 1814.1719 h 2418.89848 v -1814.1719 z m 1218.5997,552.9063 a 824.22133,585.57279 0 0 1 824.2226,585.5722 824.22133,585.57279 0 0 1 -824.2226,585.5743 824.22133,585.57279 0 0 1 -824.2207,-585.5743 824.22133,585.57279 0 0 1 824.2207,-585.5722 z"
-       transform="scale(0.26458333)"
+       style="fill:#e9e9e9;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -856.20872,-298.29932 v 479.99964 h 640.00021 v -479.99964 z m 322.42117,146.28979 A 218.07522,154.9328 0 0 1 -315.71199,2.9231101 218.07522,154.9328 0 0 1 -533.78755,157.85631 218.07522,154.9328 0 0 1 -751.86261,2.9231101 218.07522,154.9328 0 0 1 -533.78755,-152.00953 Z"
        inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\pausescreen.png"
        inkscape:export-xdpi="25.4"
        inkscape:export-ydpi="25.4" />
@@ -1265,7 +1245,7 @@
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:45.8611px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
        x="-626.87537"
-       y="-749.63586"
+       y="-195.38568"
        id="text191806"
        inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\pausescreen.png"
        inkscape:export-xdpi="25.4"
@@ -1274,12 +1254,12 @@
          id="tspan191804"
          style="font-weight:bold;font-size:45.8611px;fill:#000000;fill-opacity:1;stroke-width:0.264583"
          x="-626.87537"
-         y="-749.63586">Paused</tspan></text>
+         y="-195.38568">Paused</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:17.6389px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
        x="-637.27075"
-       y="-720.29144"
+       y="-166.04126"
        id="text208022"
        inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\pausescreen.png"
        inkscape:export-xdpi="25.4"
@@ -1288,7 +1268,7 @@
          id="tspan208020"
          style="font-size:17.6389px;stroke-width:0.264583"
          x="-637.27075"
-         y="-720.29144">Aww, you need a break?</tspan></text>
+         y="-166.04126">Aww, you need a break?</tspan></text>
     <g
        id="g223813"
        inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\enemy.png"
@@ -1595,40 +1575,42 @@
        inkscape:export-xdpi="25.4"
        inkscape:export-ydpi="25.4" />
     <g
-       id="g249795"
-       transform="matrix(0.57477223,-0.25168868,0.25809813,0.56049871,160.38509,-32.634771)"
+       id="g271472"
        inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\player.png"
        inkscape:export-xdpi="25.4"
        inkscape:export-ydpi="25.4">
       <rect
-         style="fill:#839100;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.203407;stroke-miterlimit:4;stroke-dasharray:0.813632, 0.406816;stroke-dashoffset:0;stroke-opacity:1"
+         style="fill:#839100;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.126569;stroke-miterlimit:4;stroke-dasharray:0.506278, 0.253139;stroke-dashoffset:0;stroke-opacity:1"
          id="rect249510"
-         width="120.71615"
-         height="42.167969"
-         x="105.83333"
-         y="-187.6888" />
+         width="75.744965"
+         height="26.020523"
+         x="225.76646"
+         y="-81.371208"
+         transform="matrix(0.91602512,-0.4011209,0.418265,0.90832504,0,0)" />
       <text
          xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:20.1758px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.0504397"
-         x="132.21176"
-         y="-167.15099"
-         id="text239104"><tspan
+         style="font-style:normal;font-weight:normal;font-size:12.5532px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.031383"
+         x="241.96165"
+         y="-69.486961"
+         id="text239104"
+         transform="matrix(0.92379003,-0.4045211,0.41482254,0.90084923,0,0)"><tspan
            sodipodi:role="line"
            id="tspan239102"
-           style="font-weight:bold;font-size:20.1758px;fill:#ffffff;fill-opacity:1;stroke-width:0.0504397"
-           x="132.21176"
-           y="-167.15099">KONG</tspan></text>
+           style="font-weight:bold;font-size:12.5532px;fill:#ffffff;fill-opacity:1;stroke-width:0.031383"
+           x="241.96165"
+           y="-69.486961">BABY</tspan></text>
       <text
          xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:17.0212px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.425532"
-         x="117.87418"
-         y="-148.92557"
-         id="text247566"><tspan
+         style="font-style:normal;font-weight:normal;font-size:10.5904px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264761"
+         x="231.36047"
+         y="-57.928413"
+         id="text247566"
+         transform="matrix(0.92379003,-0.4045211,0.41482254,0.90084923,0,0)"><tspan
            sodipodi:role="line"
            id="tspan247564"
-           style="fill:#ffffff;fill-opacity:1;stroke-width:0.425532"
-           x="117.87418"
-           y="-148.92557">ON BOARD</tspan></text>
+           style="fill:#ffffff;fill-opacity:1;stroke-width:0.264761"
+           x="231.36047"
+           y="-57.928413">ON BOARD</tspan></text>
     </g>
     <path
        sodipodi:type="star"
@@ -1666,6 +1648,17 @@
          style="font-weight:bold;font-size:67.3654px;fill:#000000;fill-opacity:1;stroke-width:0.168415"
          x="147.20604"
          y="-540.19421">!</tspan></text>
+    <rect
+       style="fill:#000000;fill-opacity:0;fill-rule:evenodd;stroke:none;stroke-width:0.330322;stroke-opacity:1"
+       id="rect274106"
+       width="100"
+       height="340"
+       x="-582.93384"
+       y="-8.0613441e-12"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\hole.png"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4"
+       transform="rotate(-90)" />
   </g>
   <g
      inkscape:groupmode="layer"
@@ -1683,7 +1676,7 @@
        inkscape:export-ydpi="25.4" />
     <path
        id="path259051"
-       style="fill:#9d9d9d;fill-rule:evenodd;stroke-width:0.0239831;stroke-dasharray:0.095933, 0.0479664"
+       style="fill:#ff2222;fill-opacity:1;fill-rule:evenodd;stroke-width:0.0239831;stroke-dasharray:0.095933, 0.0479664"
        inkscape:transform-center-x="-0.53515368"
        inkscape:transform-center-y="-0.90445133"
        d="m -1358.7355,878.63475 -9.3122,19.3415 -8.594,1.9495 -15.9861,4.7974 -23.7876,-5.3862 -11.1013,-16.5072 5.3328,-25.7867 11.9072,-11.26836 17.1994,-6.7987 10.2173,8.8998 15.4929,1.3314 z"
@@ -1703,7 +1696,7 @@
        inkscape:export-ydpi="25.4" />
     <path
        id="path260453"
-       style="fill:#535353;fill-opacity:1;fill-rule:evenodd;stroke-width:0.0206723;stroke-dasharray:0.0826895, 0.0413448"
+       style="fill:#ff9f1b;fill-opacity:1;fill-rule:evenodd;stroke-width:0.0206723;stroke-dasharray:0.0826895, 0.0413448"
        inkscape:transform-center-x="-2.0274073"
        inkscape:transform-center-y="-0.26099173"
        d="m -1301.5072,851.20442 7.0421,17.11062 -3.6988,6.6345 -6.1291,13.0153 -17.153,12.1545 -16.9798,-2.3862 -13.4674,-18.27 -0.37,-14.1259 5.5443,-14.94599 11.5918,-1.42779 9.7758,-9.16964 z"
@@ -1723,7 +1716,7 @@
        inkscape:export-ydpi="25.4" />
     <path
        id="path260743"
-       style="fill:#cccccc;fill-opacity:1;fill-rule:evenodd;stroke-width:0.0190485;stroke-dasharray:0.0761942, 0.0380972"
+       style="fill:#ffe743;fill-opacity:1;fill-rule:evenodd;stroke-width:0.0190485;stroke-dasharray:0.0761942, 0.0380972"
        inkscape:transform-center-x="0.32502756"
        inkscape:transform-center-y="-1.7127406"
        d="m -1270.8402,850.37455 15.189,-7.49925 6.1751,3.1007 12.0641,5.02955 11.7742,15.37828 -1.4071,15.99652 -15.9537,13.56611 -12.7813,1.1038 -13.7872,-4.37946 -1.8089,-10.75648 -8.742,-8.64391 z"
@@ -1753,7 +1746,7 @@
        inkscape:export-ydpi="25.4" />
     <path
        id="path260745"
-       style="fill:#5c5c5c;fill-opacity:1;fill-rule:evenodd;stroke-width:0.0140732;stroke-dasharray:0.0562929, 0.0281466"
+       style="fill:#fff600;fill-opacity:1;fill-rule:evenodd;stroke-width:0.0140732;stroke-dasharray:0.0562929, 0.0281466"
        inkscape:transform-center-x="0.40399391"
        inkscape:transform-center-y="0.85554349"
        d="m -1385.6797,957.07578 -12.604,-1.5364 -3.062,-4.4183 -6.3269,-7.9977 -2.6641,-14.2641 6.299,-9.2974 15.1465,-1.896 8.8601,4.5049 7.6895,8.2958 -2.4056,7.3697 2.9082,8.8794 z"
@@ -1773,7 +1766,7 @@
        inkscape:export-ydpi="25.4" />
     <path
        id="path261143"
-       style="fill:#808080;fill-opacity:1;fill-rule:evenodd;stroke-width:0.0112075;stroke-dasharray:0.0448299, 0.0224151"
+       style="fill:#ff1500;fill-opacity:1;fill-rule:evenodd;stroke-width:0.0112075;stroke-dasharray:0.0448299, 0.0224151"
        inkscape:transform-center-x="0.87769723"
        inkscape:transform-center-y="0.27889463"
        d="m -1336.9765,950.40273 -4.7151,-8.8922 1.5755,-3.8864 2.4941,-7.5473 8.38,-7.8278 9.1269,0.1488 8.1836,9.0889 1.0107,7.7123 -2.0732,8.565 -6.0544,1.5728 -4.6466,5.6896 z"
@@ -1793,7 +1786,7 @@
        inkscape:export-ydpi="25.4" />
     <path
        id="path261415"
-       style="fill:#a1a1a1;fill-opacity:1;fill-rule:evenodd;stroke-width:0.00819345;stroke-dasharray:0.0327738, 0.016387"
+       style="fill:#ff9c00;fill-opacity:1;fill-rule:evenodd;stroke-width:0.00819345;stroke-dasharray:0.0327738, 0.016387"
        inkscape:transform-center-x="-0.3206872"
        inkscape:transform-center-y="0.23304394"
        d="m -1252.9831,948.52108 -6.6762,-3.1359 -0.8472,-2.9863 -1.9672,-5.5483 1.2587,-8.3288 5.2643,-3.9681 8.7398,1.7103 4.0371,4.0879 2.6637,5.9599 -2.7419,3.6157 -0.092,5.4118 z"
@@ -1823,7 +1816,7 @@
        inkscape:export-ydpi="25.4" />
     <path
        id="path266294"
-       style="fill:#b6b6b6;fill-opacity:1;fill-rule:evenodd;stroke-width:0.0174712;stroke-dasharray:0.069885, 0.0349426"
+       style="fill:#ff5900;fill-opacity:1;fill-rule:evenodd;stroke-width:0.0174712;stroke-dasharray:0.069885, 0.0349426"
        inkscape:transform-center-x="-0.26071141"
        inkscape:transform-center-y="-0.84309207"
        d="m -1186.8768,846.10668 15.8018,1.12447 3.504,5.22199 7.3338,9.40536 2.1856,17.29148 -8.7305,11.7521 -19.2992,3.22716 -10.8244,-4.98052 -9.0311,-9.6884 3.6504,-9.16035 -2.9402,-10.68904 z"
