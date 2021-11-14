@@ -17,6 +17,8 @@ namespace MineKart
 
         private TrackSegmentComponent TrackSegment { get; set; }
         private GameObject Player { get; set; }
+        private Camera Camera { get; set; }
+        private GraphicsManager GraphicsManager { get; set; }
 
         private Texture SegmentTexture { get; set; }
 
@@ -46,6 +48,17 @@ namespace MineKart
                 throw new Exception($"Unable to load segment texture from file");
             }
 
+            Camera = ServiceLocator.Instance.GetService<Camera>();
+            if (Camera == null)
+            {
+                throw new Exception($"Unable to retrieve camera from service locator");
+            }
+
+            GraphicsManager = ServiceLocator.Instance.GetService<GraphicsManager>();
+            if (GraphicsManager == null)
+            {
+                throw new Exception($"Unable to retrieve graphics manager from service locator");
+            }
         }
 
         // This code assumes the segment components are ordered front-to-back
@@ -95,11 +108,10 @@ namespace MineKart
         // This assumes all segment components have up-to-date DrawPositions and are linked together
         public override void Render()
         {
-            Camera camera = ServiceLocator.Instance.GetService<Camera>();
             TransformComponent transform = Owner.Transform;
 
-            if (transform.Position.Z < camera.Position.Z ||
-                transform.Position.Z > camera.Position.Z + camera.DrawDistance)
+            if (transform.Position.Z < Camera.Position.Z ||
+                transform.Position.Z > Camera.Position.Z + Camera.DrawDistance)
             {
                 // Ignore objects behind the camera or forward of the draw distance
                 // TODO: Consider looping tracks
@@ -112,10 +124,6 @@ namespace MineKart
 
         private void RenderRoad()
         {
-            Camera camera = ServiceLocator.Instance.GetService<Camera>();
-
-            GraphicsManager graphicsManager = ServiceLocator.Instance.GetService<GraphicsManager>();
-
             // In this context the "previous" segment is the one with a lower Z (higher projected Y)
             TrackSegmentDrawableComponent previousDrawableComponent = TrackSegment.PreviousSegment.Owner.GetComponent<TrackSegmentDrawableComponent>();
             Vector3 previousSegmentDrawPosition = previousDrawableComponent.DrawPosition;
@@ -125,10 +133,10 @@ namespace MineKart
             sourceRect.Height = 1; // Limit to one pixel high
 
             // Project the start and end of the segment, then we'll lerp between them
-            Rect3 previousSegmentScreenRect = camera.ProjectSpriteToScreen(previousSegmentDrawPosition, sourceRect);
-            Rect3 currentSegmentScreenRect = camera.ProjectSpriteToScreen(currentSegmentDrawPosition, sourceRect);
+            Rect3 previousSegmentScreenRect = Camera.ProjectSpriteToScreen(previousSegmentDrawPosition, sourceRect);
+            Rect3 currentSegmentScreenRect = Camera.ProjectSpriteToScreen(currentSegmentDrawPosition, sourceRect);
 
-            if (false == Utilities.InRange(currentSegmentScreenRect.Y, 0, camera.Height))
+            if (false == Utilities.InRange(currentSegmentScreenRect.Y, 0, Camera.Height))
             {
                 // Exit early if the current segment isn't on screen
                 return;
@@ -156,7 +164,7 @@ namespace MineKart
                 steppedScreenRect.Width += screenDeltaWidthAccumulated;
                 steppedScreenRect.Height = 1; // Leave source rect height unscaled
 
-                if (false == Utilities.InRange(steppedScreenRect.Y, 0, camera.Height))
+                if (false == Utilities.InRange(steppedScreenRect.Y, 0, Camera.Height))
                 {
                     // Exit early if we're starting to draw outside of the camera
                     break;
@@ -176,19 +184,17 @@ namespace MineKart
                 SDL.SDL_Rect sourceSdlRect = sourceRect.ToSdlRect();
                 SDL.SDL_Rect targetSdlRect = (steppedScreenRect - textureOrigin).ToSdlRect();
 
-                SegmentTexture.Render(graphicsManager.RendererHandle, sourceSdlRect, targetSdlRect, isFlipped: false);
+                SegmentTexture.Render(GraphicsManager.RendererHandle, sourceSdlRect, targetSdlRect, isFlipped: false);
             }
         }
 
         public void RenderDebug()
         {
-            Camera camera = ServiceLocator.Instance.GetService<Camera>();
-
             Vector3 worldLeft = DrawPosition - new Vector3(1, 0, 0);
             Vector3 worldRight = DrawPosition + new Vector3(1, 0, 0);
 
-            Vector3 screenLeft = camera.ProjectPointToScreen(worldLeft);
-            Vector3 screenRight = camera.ProjectPointToScreen(worldRight);
+            Vector3 screenLeft = Camera.ProjectPointToScreen(worldLeft);
+            Vector3 screenRight = Camera.ProjectPointToScreen(worldRight);
 
             Color debugColor = TrackSegment.SegmentId == 0 ? Color.Cyan : Color.Yellow;
             Debug.DrawLine(screenLeft, screenRight, debugColor);

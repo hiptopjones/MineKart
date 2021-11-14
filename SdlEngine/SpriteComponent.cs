@@ -21,6 +21,31 @@ namespace SdlEngine
         // Private variables below here
         private Texture SpriteTexture { get; set; } // TODO: Use a weak reference?
 
+        private Camera Camera { get; set; }
+        private GraphicsManager GraphicsManager { get; set; }
+        private ResourceManager ResourceManager { get; set; }
+
+        public override void Awake()
+        {
+            Camera = ServiceLocator.Instance.GetService<Camera>();
+            if (Camera == null)
+            {
+                throw new Exception($"Unable to retrieve camera from service locator");
+            }
+
+            GraphicsManager = ServiceLocator.Instance.GetService<GraphicsManager>();
+            if (GraphicsManager == null)
+            {
+                throw new Exception($"Unable to retrieve graphics manager from service locator");
+            }
+
+            ResourceManager = ServiceLocator.Instance.GetService<ResourceManager>();
+            if (ResourceManager == null)
+            {
+                throw new Exception($"Unable to retrieve resource manager from service locator");
+            }
+        }
+
         public override void Start()
         {
             RefreshTexture();
@@ -28,9 +53,6 @@ namespace SdlEngine
 
         public override void Render()
         {
-            Camera camera = ServiceLocator.Instance.GetService<Camera>();
-
-            GraphicsManager graphicsManager = ServiceLocator.Instance.GetService<GraphicsManager>();
             TransformComponent transform = Owner.Transform;
 
             Rect3 clippingRect = ClippingRect ?? new Rect3
@@ -41,7 +63,7 @@ namespace SdlEngine
                 Height = SpriteTexture.Height
             };
 
-            Rect3 projectedTargetRect = camera.ProjectSpriteToScreen(transform.Position, clippingRect);
+            Rect3 projectedTargetRect = Camera.ProjectSpriteToScreen(transform.Position, clippingRect);
 
             Vector3 origin = new Vector3
             {
@@ -65,13 +87,12 @@ namespace SdlEngine
                 h = (int)projectedTargetRect.Height
             };
 
-            SpriteTexture.Render(graphicsManager.RendererHandle, sourceRect, targetRect, isFlipped: false);
+            SpriteTexture.Render(GraphicsManager.RendererHandle, sourceRect, targetRect, isFlipped: false);
         }
 
         public void RefreshTexture()
         {
-            ResourceManager resourceManager = ServiceLocator.Instance.GetService<ResourceManager>();
-            SpriteTexture = resourceManager.GetTexture(TextureFilePath);
+            SpriteTexture = ResourceManager.GetTexture(TextureFilePath);
         }
     }
 }

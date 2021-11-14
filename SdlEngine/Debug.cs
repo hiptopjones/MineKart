@@ -18,6 +18,17 @@ namespace SdlEngine
 
         public static bool IsEnabled { get; set; }
 
+        private static GraphicsManager GraphicsManager { get; set; }
+
+        static Debug()
+        {
+            GraphicsManager = ServiceLocator.Instance.GetService<GraphicsManager>();
+            if (GraphicsManager == null)
+            {
+                throw new Exception($"Unable to retrieve graphics manager from service locator");
+            }
+        }
+
         public static void DrawLine(Vector3 from, Vector3 to)
         {
             DrawLine(from, to, DefaultColor);
@@ -83,10 +94,9 @@ namespace SdlEngine
         {
             if (IsEnabled)
             {
-                GraphicsManager graphicsManager = ServiceLocator.Instance.GetService<GraphicsManager>();
                 foreach (Action<IntPtr> frameAction in FrameActions)
                 {
-                    frameAction(graphicsManager.RendererHandle);
+                    frameAction(GraphicsManager.RendererHandle);
                 }
             }
 

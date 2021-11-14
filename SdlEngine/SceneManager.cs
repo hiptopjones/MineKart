@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SdlEngine
 {
-    public class SceneStateMachine
+    public class SceneManager
     {
         private Dictionary<int, Scene> SceneMap { get; set; } = new Dictionary<int, Scene>();
 

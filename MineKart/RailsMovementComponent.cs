@@ -53,7 +53,11 @@ namespace MineKart
                 }
             }
 
-            if (IsBraking)
+            if (IsFalling)
+            {
+                velocity.Z = 0;
+            }
+            else if (IsBraking)
             {
                 // TODO: Throw sparks, make noise
                 velocity.Z = BrakeForwardSpeed;

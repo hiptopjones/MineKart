@@ -10,6 +10,17 @@ namespace SdlEngine
     {
         public Rect3 BoundingBox { get; set; }
 
+        private Camera Camera { get; set; }
+
+        public override void Awake()
+        {
+            Camera = ServiceLocator.Instance.GetService<Camera>();
+            if (Camera == null)
+            {
+                throw new Exception($"Unable to retrieve camera from service locator");
+            }
+        }
+
         public override bool Intersects(ColliderComponent colliderComponent, out Collision collision)
         {
             BoxColliderComponent boxColliderComponent = colliderComponent as BoxColliderComponent;
@@ -59,14 +70,13 @@ namespace SdlEngine
             DrawBoundingBox(boxCollider2.BoundingBox);
         }
 
+        // TODO: Move this to the Debug class?
         private void DrawBoundingBox(Rect3 boundingBox)
         {
-            Camera camera = ServiceLocator.Instance.GetService<Camera>();
-
-            Rect3 frontRect = camera.ProjectRectToScreen(boundingBox);
+            Rect3 frontRect = Camera.ProjectRectToScreen(boundingBox);
             Debug.DrawRect(frontRect, Color.Green);
 
-            Rect3 backRect = camera.ProjectRectToScreen(boundingBox + new Vector3(0, 0, boundingBox.Depth));
+            Rect3 backRect = Camera.ProjectRectToScreen(boundingBox + new Vector3(0, 0, boundingBox.Depth));
             Debug.DrawRect(backRect, Color.Red);
 
             Debug.DrawLine(frontRect.GetPosition(), backRect.GetPosition(), Color.Green);

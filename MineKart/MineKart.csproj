@@ -54,7 +54,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PauseGameComponent.cs" />
+    <Compile Include="EnemySpawnerComponent.cs" />
+    <Compile Include="EnemyMovementComponent.cs" />
+    <Compile Include="ExplosionSpawnerComponent.cs" />
+    <Compile Include="AcceleratedMovementComponent.cs" />
     <Compile Include="RailsMovementComponent.cs" />
     <Compile Include="CommandLineOptions.cs" />
     <Compile Include="GameScene.cs" />
@@ -92,6 +95,9 @@
     <Content Include="Assets\endscreen.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\enemy.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Assets\hole-entering.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -105,6 +111,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\player.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\rocks.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\startscreen.png">

@@ -22,7 +22,7 @@ namespace MineKart
         private EventManager EventManager { get; set; }
         private ResourceManager ResourceManager { get; set; }
         private FontManager FontManager { get; set; }
-        private SceneStateMachine SceneStateMachine { get; set; }
+        private SceneManager SceneManager { get; set; }
 
         private Camera MainCamera { get; set; }
 
@@ -106,16 +106,8 @@ namespace MineKart
             MainCamera = new Camera(GameSettings.RenderWidth, GameSettings.RenderHeight, GameSettings.FieldOfViewDegrees, GameSettings.DrawDistance);
             ServiceLocator.Instance.ProvideService<Camera>(MainCamera);
 
-            SceneStateMachine = new SceneStateMachine();
-            ServiceLocator.Instance.ProvideService<SceneStateMachine>(SceneStateMachine);
-
-            TimeDelayScene splashScreenScene = new TimeDelayScene
-            {
-                TextureFilePath = GameSettings.SplashScreenTextureFilePath,
-                TransitionSceneId = (int)SceneType.StartScreen,
-                TransitionDelayTime = GameSettings.SplashScreenTransitionDelay
-            };
-            SceneStateMachine.AddScene((int)SceneType.SplashScreen, splashScreenScene);
+            SceneManager = new SceneManager();
+            ServiceLocator.Instance.ProvideService<SceneManager>(SceneManager);
 
             KeyDelayScene startScene = new KeyDelayScene
             {
@@ -125,11 +117,11 @@ namespace MineKart
                     { SDL.SDL_Keycode.SDLK_SPACE, (int)SceneType.GameScreen }
                 }
             };
-            SceneStateMachine.AddScene((int)SceneType.StartScreen, startScene);
+            SceneManager.AddScene((int)SceneType.StartScreen, startScene);
 
             // TODO: Pass in the end screen scene ID?
             GameScene gameScene = new GameScene();
-            SceneStateMachine.AddScene((int)SceneType.GameScreen, gameScene);
+            SceneManager.AddScene((int)SceneType.GameScreen, gameScene);
 
             KeyDelayScene endScene = new KeyDelayScene
             {
@@ -140,9 +132,9 @@ namespace MineKart
                     { SDL.SDL_Keycode.SDLK_ESCAPE, (int)SceneType.StartScreen }
                 }
             };
-            SceneStateMachine.AddScene((int)SceneType.EndScreen, endScene);
+            SceneManager.AddScene((int)SceneType.EndScreen, endScene);
 
-            SceneStateMachine.SwitchTo((int)SceneType.SplashScreen);
+            SceneManager.SwitchTo((int)SceneType.StartScreen);
         }
 
         protected override void HandleEvents()
@@ -157,12 +149,12 @@ namespace MineKart
 
         protected override void Update()
         {
-            SceneStateMachine.Update();
+            SceneManager.Update();
         }
 
         protected override void LateUpdate()
         {
-            SceneStateMachine.LateUpdate();
+            SceneManager.LateUpdate();
         }
 
         protected override void Render()
@@ -170,7 +162,7 @@ namespace MineKart
             SDL.SDL_SetRenderDrawColor(GraphicsManager.RendererHandle, GameSettings.RenderClearColor.ToSdlColor());
             SDL.SDL_RenderClear(GraphicsManager.RendererHandle);
 
-            SceneStateMachine.Render();
+            SceneManager.Render();
 
             SDL.SDL_RenderPresent(GraphicsManager.RendererHandle);
         }

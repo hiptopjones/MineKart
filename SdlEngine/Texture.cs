@@ -16,6 +16,24 @@ namespace SdlEngine
 
         private IntPtr TextureHandle { get; set; }
 
+        private static GraphicsManager GraphicsManager { get; set; }
+        private static FontManager FontManager { get; set; }
+
+        static Texture()
+        {
+            GraphicsManager = ServiceLocator.Instance.GetService<GraphicsManager>();
+            if (GraphicsManager == null)
+            {
+                throw new Exception($"Unable to retrieve graphics manager from service locator");
+            }
+
+            FontManager = ServiceLocator.Instance.GetService<FontManager>();
+            if (FontManager == null)
+            {
+                throw new Exception($"Unable to retrieve font manager from service locator");
+            }
+        }
+
         // Use factory method
         private Texture()
         {
@@ -90,8 +108,7 @@ namespace SdlEngine
         // TODO: This needs to work with different fonts / sizes, not just colors
         public static Texture LoadFromRenderedText(string text, SDL.SDL_Color color)
         {
-            FontManager fontManager = ServiceLocator.Instance.GetService<FontManager>();
-            IntPtr fontHandle = fontManager.GetFontHandle("Debug");
+            IntPtr fontHandle = FontManager.GetFontHandle("Debug");
 
             IntPtr surfaceHandle = IntPtr.Zero;
 
@@ -113,8 +130,7 @@ namespace SdlEngine
 
         private static Texture CreateFromSurface(IntPtr surfaceHandle)
         {
-            GraphicsManager graphicsManager = ServiceLocator.Instance.GetService<GraphicsManager>();
-            IntPtr rendererHandle = graphicsManager.RendererHandle;
+            IntPtr rendererHandle = GraphicsManager.RendererHandle;
 
             IntPtr textureHandle = SDL.SDL_CreateTextureFromSurface(rendererHandle, surfaceHandle);
             if (textureHandle == IntPtr.Zero)

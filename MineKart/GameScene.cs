@@ -36,6 +36,9 @@ namespace MineKart
 
             GameObject pause = InitializePause();
             GameObjects.Add(pause);
+
+            GameObject spawner = InitializeEnemySpawner();
+            GameObjects.Add(spawner);
         }
 
         public override void Update()
@@ -80,7 +83,6 @@ namespace MineKart
             {
                 GenerateDistance = 100,
                 PruneDistance = 5,
-                Player = ServiceLocator.Instance.GetService<GameObject>("Player")
             };
             trackGenerator.AddComponent(trackGeneratorComponent);
 
@@ -130,6 +132,21 @@ namespace MineKart
             PlayerCollisionHandlerComponent collisionHandlerComponent = new PlayerCollisionHandlerComponent();
             player.AddComponent(collisionHandlerComponent);
 
+            ExplosionSpawnerComponent explosionComponent = new ExplosionSpawnerComponent
+            {
+                NumRocks = 100,
+                MaxSpeed = 25,
+                MinSpeed = 15,
+                NumSpritesX = 4,
+                NumSpritesY = 2,
+                SpawnSpeed = 1000,
+                SpriteWidth = 70,
+                SpriteHeight = 70,
+                GravityAcceleration = 200,
+                TextureFilePath = GameSettings.RocksTextureFilePath
+            };
+            player.AddComponent(explosionComponent);
+
             return player;
         }
 
@@ -171,6 +188,23 @@ namespace MineKart
             pause.AddComponent(pauseComponent);
 
             return pause;
+        }
+
+        private GameObject InitializeEnemySpawner()
+        {
+            GameObject spawner = new GameObject
+            {
+                Name = "Spawner"
+            };
+
+            EnemySpawnerComponent spawnerComponent = new EnemySpawnerComponent
+            {
+                SpawnTime = 3,
+                SpawnPlayerOffset = 25
+            };
+            spawner.AddComponent(spawnerComponent);
+
+            return spawner;
         }
     }
 }

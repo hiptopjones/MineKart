@@ -22,45 +22,54 @@ namespace SdlEngine
         // Used when Shift pressed
         public double ShiftSpeedMultiplier { get; set; }
 
+        private EventManager EventManager { get; set; }
+
+        public override void Awake()
+        {
+            EventManager = ServiceLocator.Instance.GetService<EventManager>();
+            if (EventManager == null)
+            {
+                throw new Exception($"Unable to retrieve event manager from service locator");
+            }
+        }
+
         public override void Update()
         {
-            EventManager eventManager = ServiceLocator.Instance.GetService<EventManager>();
-
             Vector3 velocity = new Vector3();
 
             double speedMultiplier = 1;
-            if (eventManager.IsKeyPressed(SDL.SDL_Keycode.SDLK_LCTRL))
+            if (EventManager.IsKeyPressed(SDL.SDL_Keycode.SDLK_LCTRL))
             {
                 speedMultiplier = CtrlSpeedMultiplier;
             }
-            else if (eventManager.IsKeyPressed(SDL.SDL_Keycode.SDLK_LSHIFT))
+            else if (EventManager.IsKeyPressed(SDL.SDL_Keycode.SDLK_LSHIFT))
             {
                 speedMultiplier = ShiftSpeedMultiplier;
             }
 
-            if (eventManager.IsKeyPressed(SDL.SDL_Keycode.SDLK_LEFT))
+            if (EventManager.IsKeyPressed(SDL.SDL_Keycode.SDLK_LEFT))
             {
                 velocity -= LeftRightVelocity;
             }
-            else if (eventManager.IsKeyPressed(SDL.SDL_Keycode.SDLK_RIGHT))
+            else if (EventManager.IsKeyPressed(SDL.SDL_Keycode.SDLK_RIGHT))
             {
                 velocity += LeftRightVelocity;
             }
 
-            if (eventManager.IsKeyPressed(SDL.SDL_Keycode.SDLK_UP))
+            if (EventManager.IsKeyPressed(SDL.SDL_Keycode.SDLK_UP))
             {
                 velocity -= UpDownVelocity;
             }
-            else if (eventManager.IsKeyPressed(SDL.SDL_Keycode.SDLK_DOWN))
+            else if (EventManager.IsKeyPressed(SDL.SDL_Keycode.SDLK_DOWN))
             {
                 velocity += UpDownVelocity;
             }
 
-            if (eventManager.IsKeyPressed(SDL.SDL_Keycode.SDLK_a))
+            if (EventManager.IsKeyPressed(SDL.SDL_Keycode.SDLK_a))
             {
                 velocity += InOutVelocity;
             }
-            else if (eventManager.IsKeyPressed(SDL.SDL_Keycode.SDLK_z))
+            else if (EventManager.IsKeyPressed(SDL.SDL_Keycode.SDLK_z))
             {
                 velocity -= InOutVelocity;
             }

@@ -21,6 +21,8 @@ namespace SdlEngine
 
         private bool IsFollowing { get; set; } = true;
 
+        private EventManager EventManager { get; set; }
+
         public override void Awake()
         {
             if (Camera == null)
@@ -32,13 +34,17 @@ namespace SdlEngine
             {
                 throw new Exception("No follow object configured");
             }
+
+            EventManager = ServiceLocator.Instance.GetService<EventManager>();
+            if (EventManager == null)
+            {
+                throw new Exception($"Unable to retrieve event manager from service locator");
+            }
         }
 
         public override void Update()
         {
-            EventManager eventManager = ServiceLocator.Instance.GetService<EventManager>();
-
-            if (eventManager.IsKeyDown(SDL.SDL_Keycode.SDLK_f))
+            if (EventManager.IsKeyDown(SDL.SDL_Keycode.SDLK_f))
             {
                 IsFollowing = !IsFollowing;
             }

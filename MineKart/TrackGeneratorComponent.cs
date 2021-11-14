@@ -11,8 +11,8 @@ namespace MineKart
     {
         public int GenerateDistance { get; set; }  // Distance ahead of the player to generate
         public int PruneDistance { get; set; } // Distance it must be from player before segment can be pruned
-        public GameObject Player { get; set; }
 
+        private GameObject Player { get; set; }
         private GameObjectCollection SceneObjects { get; set; }
 
         private Dictionary<int, GameObject> TrackSegments { get; set; } = new Dictionary<int, GameObject>();
@@ -24,6 +24,12 @@ namespace MineKart
 
         public override void Awake()
         {
+            Player = ServiceLocator.Instance.GetService<GameObject>("Player");
+            if (Player == null)
+            {
+                throw new Exception($"Unable to retrieve player from service locator");
+            }
+
             SceneObjects = ServiceLocator.Instance.GetService<GameObjectCollection>();
             if (SceneObjects == null)
             {
@@ -170,6 +176,7 @@ namespace MineKart
         {
             return previousSegmentComponent;
         }
+
         private TrackSegmentComponent AddTrackSegment(TrackSegmentComponent previousSegmentComponent, TrackSegmentType segmentType)
         {
             return AddTrackSegment(previousSegmentComponent, segmentType, Vector3.Zero);
@@ -179,11 +186,11 @@ namespace MineKart
         {
             int segmentId = previousSegmentComponent == null ? 0 : previousSegmentComponent.SegmentId + 1;
 
-            GameObject gameObject = new GameObject
+            GameObject segment = new GameObject
             {
                 Name = $"TrackSegment{segmentId}"
             };
-            gameObject.Transform.Position = new Vector3(0, 1, segmentId);
+            segment.Transform.Position = new Vector3(0, 1, segmentId);
 
             TrackSegmentComponent segmentComponent = new TrackSegmentComponent
             {
@@ -194,13 +201,13 @@ namespace MineKart
                 NextSegment = null,
                 CumulativeCurvature = Vector3.Zero,
             };
-            gameObject.AddComponent(segmentComponent);
+            segment.AddComponent(segmentComponent);
 
             TrackSegmentDrawableComponent drawableComponent = new TrackSegmentDrawableComponent
             {
                 TextureFilePath = GetTrackSegmentTypeTextureFilePath(segmentType)
             };
-            gameObject.AddComponent(drawableComponent);
+            segment.AddComponent(drawableComponent);
 
             if (previousSegmentComponent != null)
             {
@@ -214,9 +221,9 @@ namespace MineKart
                 BoundingBox = new Rect3(-1, -0.1, -1, 2, 0.2, 1),
                 Collider = new BoxCollider()
             };
-            gameObject.AddComponent(boxColliderComponent);
+            segment.AddComponent(boxColliderComponent);
 
-            TrackSegments[segmentId] = gameObject;
+            TrackSegments[segmentId] = segment;
             LastActiveObjectIndex++;
 
             if (segmentId != LastActiveObjectIndex)
@@ -225,7 +232,7 @@ namespace MineKart
             }
 
             // Add to scene object collection
-            SceneObjects.Add(gameObject);
+            SceneObjects.Add(segment);
 
             return segmentComponent;
         }
