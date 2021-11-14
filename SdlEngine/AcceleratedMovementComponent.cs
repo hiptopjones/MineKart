@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MineKart
+namespace SdlEngine
 {
-    class AcceleratedMovementComponent : Component
+    public class AcceleratedMovementComponent : Component
     {
         public Vector3 Velocity { get; set; }
         public Vector3 Acceleration { get; set; }

@@ -10,7 +10,7 @@ namespace MineKart
     public class EnemySpawnerComponent : Component
     {
         public double SpawnTime { get; set; }
-        public int SpawnPlayerOffset { get; set; }
+        public int SpawnAheadDistance { get; set; }
 
         private int SpawnIndex { get; set; }
 
@@ -59,21 +59,38 @@ namespace MineKart
             {
                 Name = $"Enemy{SpawnIndex++}"
             };
-            enemy.Transform.Position = Player.Transform.Position + new Vector3(0, 0, SpawnPlayerOffset);
+            enemy.Transform.Position = Player.Transform.Position + new Vector3(0, 0, SpawnAheadDistance);
 
-            EnemyMovementComponent movementComponent = new EnemyMovementComponent
+            AutomaticMovementComponent movementComponent = new AutomaticMovementComponent
             {
-                ForwardSpeed = -10
+                Velocity = new Vector3(0, 0, -10)
             };
             enemy.AddComponent(movementComponent);
 
             SpriteComponent spriteComponent = new SpriteComponent
             {
-                TextureFilePath = "Assets\\enemy.png",
+                TextureFilePath = GameSettings.EnemyTextureFilePath,
                 NormalizedOrigin = new Vector3(0.5, 1.0),
                 UseTransformPosition = false
             };
             enemy.AddComponent(spriteComponent);
+
+            SpriteComponent warningSpriteComponent = new SpriteComponent
+            {
+                TextureFilePath = GameSettings.WarningTextureFilePath,
+                NormalizedOrigin = new Vector3(0.5, 7), // TODO: This is a hacky way to shift it above the enemy's head
+                UseTransformPosition = false
+            };
+            enemy.AddComponent(warningSpriteComponent);
+
+            TrackAlignmentComponent alignmentComponent = new TrackAlignmentComponent();
+            enemy.AddComponent(alignmentComponent);
+
+            RangedDestroyComponent destroyComponent = new RangedDestroyComponent
+            {
+                PruneDistance = 5
+            };
+            enemy.AddComponent(destroyComponent);
 
             BoxColliderComponent boxColliderComponent = new BoxColliderComponent
             {

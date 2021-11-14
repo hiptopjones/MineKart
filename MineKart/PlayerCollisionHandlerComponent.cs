@@ -29,8 +29,14 @@ namespace MineKart
 
         public override void OnCollisionEnter(GameObject other)
         {
-            bool isDead = false;
             RailsMovementComponent movementComponent = Owner.GetComponent<RailsMovementComponent>();
+            if (movementComponent.IsFalling)
+            {
+                return;
+            }
+
+            bool isCollision = false;
+            bool isHole = false;
 
             TrackSegmentComponent segmentComponent = other.GetComponent<TrackSegmentComponent>();
             if (segmentComponent != null)
@@ -38,7 +44,7 @@ namespace MineKart
                 if (segmentComponent.SegmentType == TrackSegmentType.Hole)
                 {
                     // Fell in a hole
-                    isDead = true;
+                    isHole = true;
                 }
                 else
                 {
@@ -47,20 +53,23 @@ namespace MineKart
             }
             else
             {
-                EnemyMovementComponent enemyComponent = other.GetComponent<EnemyMovementComponent>();
+                AutomaticMovementComponent enemyComponent = other.GetComponent<AutomaticMovementComponent>();
                 if (enemyComponent != null)
                 {
                     // Collided with the enemy
-                    isDead = true;
+                    isCollision = true;
                 }
             }
 
-            if (isDead)
+            if (isCollision || isHole)
             {
                 movementComponent.StartFalling();
 
-                ExplosionSpawnerComponent explosionComponent = Owner.GetComponent<ExplosionSpawnerComponent>();
-                explosionComponent.StartSpawning();
+                if (isCollision)
+                {
+                    ExplosionSpawnerComponent explosionComponent = Owner.GetComponent<ExplosionSpawnerComponent>();
+                    explosionComponent.StartSpawning();
+                }
 
                 // After some delay, go to end screen
                 EventManager.RequestCallback(GameSettings.EndScreenDelay, () => { SceneManager.SwitchTo((int)SceneType.EndScreen); });

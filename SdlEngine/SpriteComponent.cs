@@ -17,6 +17,7 @@ namespace SdlEngine
         public Rect3? ClippingRect { get; set; }
 
         public Vector3 NormalizedOrigin { get; set; } = new Vector3(0, 0);
+        public bool IsFlipped { get; set; }
 
         public Vector3 DrawPosition { get; set; } // Position to render at
         public bool UseTransformPosition { get; set; } = true; // If true, DrawPosition will follow Transform.Position
@@ -93,7 +94,7 @@ namespace SdlEngine
                 h = (int)projectedTargetRect.Height
             };
 
-            SpriteTexture.Render(GraphicsManager.RendererHandle, sourceRect, targetRect, isFlipped: false);
+            SpriteTexture.Render(GraphicsManager.RendererHandle, sourceRect, targetRect, IsFlipped);
         }
 
         public void RefreshTexture()

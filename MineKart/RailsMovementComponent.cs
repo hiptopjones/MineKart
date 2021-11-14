@@ -12,14 +12,15 @@ namespace MineKart
     {
         public double NormalForwardSpeed { get; set; }
         public double BrakeForwardSpeed { get; set; }
-        public double JumpSpeed { get; set; }
+        public double JumpInitialSpeed { get; set; }
+        public double DeathInitialSpeed { get; set; }
         public double GravityAcceleration { get; set; }
 
         public bool IsBraking { get; set; }
         public bool IsJumping { get; set; }
         public bool IsFalling { get; set; }
 
-        public double VerticalSpeed { get; set; }
+        public double CurrentVerticalSpeed { get; set; }
 
         private EventManager EventManager { get; set; }
 
@@ -40,22 +41,26 @@ namespace MineKart
 
             if (IsJumping || IsFalling)
             {
-                velocity.Y = VerticalSpeed;
+                velocity.Y = CurrentVerticalSpeed;
             }
             else
             {
-                IsBraking = EventManager.IsKeyPressed(SDL.SDL_Keycode.SDLK_DOWN);
+                IsBraking = EventManager.IsKeyPressed(SDL.SDL_Keycode.SDLK_x) || EventManager.IsKeyPressed(SDL.SDL_Keycode.SDLK_DOWN);
 
-                if (EventManager.IsKeyPressed(SDL.SDL_Keycode.SDLK_SPACE))
+                if (EventManager.IsKeyPressed(SDL.SDL_Keycode.SDLK_c) || EventManager.IsKeyPressed(SDL.SDL_Keycode.SDLK_UP))
                 {
                     IsJumping = true;
-                    velocity.Y = JumpSpeed;
+                    velocity.Y = JumpInitialSpeed;
                 }
             }
 
             if (IsFalling)
             {
                 velocity.Z = 0;
+            }
+            else if (IsJumping)
+            {
+                velocity.Z = NormalForwardSpeed;
             }
             else if (IsBraking)
             {
@@ -71,7 +76,7 @@ namespace MineKart
 
             if (IsJumping || IsFalling)
             {
-                VerticalSpeed = velocity.Y + GravityAcceleration * Time.DeltaTime;
+                CurrentVerticalSpeed = velocity.Y + GravityAcceleration * Time.DeltaTime;
             }
         }
 
@@ -81,8 +86,7 @@ namespace MineKart
             IsBraking = false;
 
             IsFalling = true;
-
-            // TODO: Start explosion animation
+            CurrentVerticalSpeed = DeathInitialSpeed;
         }
 
         public void StopJumping()

@@ -84,8 +84,8 @@ namespace MineKart
 
             TrackGeneratorComponent trackGeneratorComponent = new TrackGeneratorComponent
             {
-                GenerateDistance = 100,
-                PruneDistance = 5,
+                GenerateDistance = 40,
+                PruneDistance = 3,
             };
             trackGenerator.AddComponent(trackGeneratorComponent);
 
@@ -98,27 +98,28 @@ namespace MineKart
             {
                 Name = "Player"
             };
-            player.Transform.Position = new Vector3(0, 1, 3);
+            player.Transform.Position = new Vector3(0, 1, 4);
 
             RailsMovementComponent movementComponent = new RailsMovementComponent
             {
                 NormalForwardSpeed = 10,
                 BrakeForwardSpeed = 2,
-                JumpSpeed = -20,
+                JumpInitialSpeed = -20,
+                DeathInitialSpeed = -10,
                 GravityAcceleration = 100
             };
             player.AddComponent(movementComponent);
 
             SpriteComponent spriteComponent = new SpriteComponent
             {
-                TextureFilePath = "Assets\\player.png",
+                TextureFilePath = GameSettings.PlayerTextureFilePath,
                 NormalizedOrigin = new Vector3(0.5, 1.0),
             };
             player.AddComponent(spriteComponent);
 
             BoxColliderComponent boxColliderComponent = new BoxColliderComponent
             {
-                BoundingBox = new Rect3(-0.1, -0.1, -0.1, 0.2, 0.2, 0.2),
+                BoundingBox = new Rect3(-0.1, -0.9, -0.1, 0.2, 1, 0.2),
                 Collider = new BoxCollider()
             };
             player.AddComponent(boxColliderComponent);
@@ -203,7 +204,7 @@ namespace MineKart
             EnemySpawnerComponent spawnerComponent = new EnemySpawnerComponent
             {
                 SpawnTime = 3,
-                SpawnPlayerOffset = 25
+                SpawnAheadDistance = 25
             };
             spawner.AddComponent(spawnerComponent);
 

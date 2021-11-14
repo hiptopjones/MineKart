@@ -61,6 +61,8 @@ namespace MineKart
             GrowTrack();
         }
 
+        // TODO: This could be done automatically, within the object, like it is for enemies
+        // TODO: Although there is the segment ID to segment lookup to consider (TrackCollection0
         private void PruneTrack()
         {
             // If we break in the debugger too long, the player could be way ahead of track generation.
@@ -167,7 +169,6 @@ namespace MineKart
             previousSegmentComponent = AddTrackSegment(previousSegmentComponent, TrackSegmentType.HoleEntering);
             previousSegmentComponent = AddTrackSegment(previousSegmentComponent, TrackSegmentType.Hole);
             previousSegmentComponent = AddTrackSegment(previousSegmentComponent, TrackSegmentType.Hole);
-            previousSegmentComponent = AddTrackSegment(previousSegmentComponent, TrackSegmentType.Hole);
             previousSegmentComponent = AddTrackSegment(previousSegmentComponent, TrackSegmentType.TrackFixing);
             previousSegmentComponent = AddTrackSegment(previousSegmentComponent, TrackSegmentType.Track);
             previousSegmentComponent = AddTrackSegment(previousSegmentComponent, TrackSegmentType.Track);
@@ -237,7 +238,50 @@ namespace MineKart
             // Add to scene object collection
             SceneObjects.Add(segment);
 
+            // While we're here, add some decorations around the segment
+            AddDecorations(segmentComponent);
+
             return segmentComponent;
+        }
+
+        private void AddDecorations(TrackSegmentComponent segmentComponent)
+        {
+            int numDecorationsPerSegment = 2;
+
+            for (int i = 0; i < numDecorationsPerSegment; i++)
+            {
+                AddWall(segmentComponent, new Vector3(1, 1, segmentComponent.SegmentId + i / (double)numDecorationsPerSegment), isFlipped: false);
+                AddWall(segmentComponent, new Vector3(-1, 1, segmentComponent.SegmentId + i / (double)numDecorationsPerSegment), isFlipped: true);
+            }
+        }
+
+        private void AddWall(TrackSegmentComponent segmentComponent, Vector3 position, bool isFlipped)
+        {
+            GameObject wall = new GameObject
+            {
+                Name = $"Cliff{position.Z:0.0}"
+            };
+            wall.Transform.Position = position;
+
+            SpriteComponent spriteComponent = new SpriteComponent
+            {
+                TextureFilePath = GameSettings.CliffTextureFilePath,
+                NormalizedOrigin = isFlipped ? new Vector3(0.7, 1) : new Vector3(0.3, 1),  // Bottom left
+                UseTransformPosition = false, // This will follow the track segment
+                IsFlipped = isFlipped
+            };
+            wall.AddComponent(spriteComponent);
+
+            TrackAlignmentComponent alignmentComponent = new TrackAlignmentComponent();
+            wall.AddComponent(alignmentComponent);
+
+            RangedDestroyComponent destroyComponent = new RangedDestroyComponent
+            {
+                PruneDistance = 2
+            };
+            wall.AddComponent(destroyComponent);
+
+            SceneObjects.Add(wall);
         }
 
         private string GetTrackSegmentTypeTextureFilePath(TrackSegmentType segmentType)

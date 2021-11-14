@@ -50,8 +50,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AcceleratedMovementComponent.cs" />
     <Compile Include="Animation.cs" />
     <Compile Include="AnimationComponent.cs" />
+    <Compile Include="AutomaticMovementComponent.cs" />
     <Compile Include="BoxCollider.cs" />
     <Compile Include="BoxColliderComponent.cs" />
     <Compile Include="Camera.cs" />
