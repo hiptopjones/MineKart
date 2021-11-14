@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MineKart
 {
-    public class TrackCollisionHandlerComponent : CollisionHandlerComponent
+    public class PlayerCollisionHandlerComponent : CollisionHandlerComponent
     {
         public override void OnCollisionEnter(GameObject other)
         {
@@ -19,9 +19,17 @@ namespace MineKart
 
             RailsMovementComponent movementComponent = Owner.GetComponent<RailsMovementComponent>();
 
-            if (segmentComponent.SegmentType == TrackSegmentType.Hole)
+            if (segmentComponent.SegmentType == TrackSegmentType.Hole || segmentComponent.SegmentType == TrackSegmentType.HoleExiting)
             {
                 movementComponent.StartFalling();
+
+                // After some delay, go to end screen
+                EventManager eventManager = ServiceLocator.Instance.GetService<EventManager>();
+                eventManager.RequestCallback(GameSettings.EndScreenDelay,
+                    () => {
+                        SceneStateMachine sceneStateMachine = ServiceLocator.Instance.GetService<SceneStateMachine>();
+                        sceneStateMachine.SwitchTo((int)SceneType.EndScreen);
+                    }); 
             }
             else
             {

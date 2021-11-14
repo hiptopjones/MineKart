@@ -12,13 +12,7 @@ namespace MineKart
     {
         public GameObjectCollection GameObjects { get; set; }
 
-        public GameScene()
-        {
-            Initialize();
-        }
-
-        // TODO: Should this be OnCreate()?
-        private void Initialize()
+        public override void OnActivate()
         {
             GameObjects = new GameObjectCollection();
 
@@ -39,6 +33,9 @@ namespace MineKart
 
             GameObject debug = InitializeDebug();
             GameObjects.Add(debug);
+
+            GameObject pause = InitializePause();
+            GameObjects.Add(pause);
         }
 
         public override void Update()
@@ -101,7 +98,7 @@ namespace MineKart
             RailsMovementComponent movementComponent = new RailsMovementComponent
             {
                 NormalForwardSpeed = 10,
-                BrakeForwardSpeed = 5,
+                BrakeForwardSpeed = 2,
                 JumpSpeed = -20,
                 GravityAcceleration = 100
             };
@@ -130,7 +127,7 @@ namespace MineKart
             };
             player.AddComponent(debugComponent);
 
-            TrackCollisionHandlerComponent collisionHandlerComponent = new TrackCollisionHandlerComponent();
+            PlayerCollisionHandlerComponent collisionHandlerComponent = new PlayerCollisionHandlerComponent();
             player.AddComponent(collisionHandlerComponent);
 
             return player;
@@ -155,6 +152,25 @@ namespace MineKart
             follow.AddComponent(followComponent);
 
             return follow;
+        }
+
+        private GameObject InitializePause()
+        {
+            GameObject pause = new GameObject
+            {
+                Name = "Pause"
+            };
+
+            // Position on the Z so it gets drawn in front of everything
+            pause.Transform.Position = new Vector3(0, 0, -100);
+
+            PauseGameComponent pauseComponent = new PauseGameComponent
+            {
+                TextureFilePath = GameSettings.PauseScreenTextureFilePath
+            };
+            pause.AddComponent(pauseComponent);
+
+            return pause;
         }
     }
 }

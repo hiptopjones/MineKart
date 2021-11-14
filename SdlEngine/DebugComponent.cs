@@ -38,6 +38,11 @@ namespace SdlEngine
                     Time.TimeScale = 1;
                 }
             }
+
+            if (EventManager.IsKeyDown(SDL.SDL_Keycode.SDLK_BACKSLASH))
+            {
+                Time.StepSingleFrame = true;
+            }
         }
     }
 }

@@ -8,6 +8,14 @@ using SdlEngine;
 
 namespace MineKart
 {
+    public enum SceneType
+    {
+        SplashScreen,
+        StartScreen,
+        GameScreen,
+        EndScreen
+    };
+
     class MyGame : Game, IDisposable
     {
         private GraphicsManager GraphicsManager { get; set; }
@@ -101,13 +109,40 @@ namespace MineKart
             SceneStateMachine = new SceneStateMachine();
             ServiceLocator.Instance.ProvideService<SceneStateMachine>(SceneStateMachine);
 
+            TimeDelayScene splashScreenScene = new TimeDelayScene
+            {
+                TextureFilePath = GameSettings.SplashScreenTextureFilePath,
+                TransitionSceneId = (int)SceneType.StartScreen,
+                TransitionDelayTime = GameSettings.SplashScreenTransitionDelay
+            };
+            SceneStateMachine.AddScene((int)SceneType.SplashScreen, splashScreenScene);
+
+            KeyDelayScene startScene = new KeyDelayScene
+            {
+                TextureFilePath = GameSettings.StartScreenTextureFilePath,
+                TransitionMap = new Dictionary<SDL.SDL_Keycode, int>
+                {
+                    { SDL.SDL_Keycode.SDLK_SPACE, (int)SceneType.GameScreen }
+                }
+            };
+            SceneStateMachine.AddScene((int)SceneType.StartScreen, startScene);
+
+            // TODO: Pass in the end screen scene ID?
             GameScene gameScene = new GameScene();
-            int gameSceneId = SceneStateMachine.AddScene(gameScene);
+            SceneStateMachine.AddScene((int)SceneType.GameScreen, gameScene);
 
-            SplashScreenScene splashScreenScene = new SplashScreenScene(GameSettings.SplashScreenTextureFilePath, SceneStateMachine, gameSceneId, GameSettings.SplashScreenTransitionDelay);
-            int splashScreenSceneId = SceneStateMachine.AddScene(splashScreenScene);
+            KeyDelayScene endScene = new KeyDelayScene
+            {
+                TextureFilePath = GameSettings.EndScreenTextureFilePath,
+                TransitionMap = new Dictionary<SDL.SDL_Keycode, int>
+                {
+                    { SDL.SDL_Keycode.SDLK_SPACE, (int)SceneType.GameScreen },
+                    { SDL.SDL_Keycode.SDLK_ESCAPE, (int)SceneType.StartScreen }
+                }
+            };
+            SceneStateMachine.AddScene((int)SceneType.EndScreen, endScene);
 
-            SceneStateMachine.SwitchTo(gameSceneId);
+            SceneStateMachine.SwitchTo((int)SceneType.SplashScreen);
         }
 
         protected override void HandleEvents()

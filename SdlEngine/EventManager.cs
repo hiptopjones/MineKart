@@ -16,6 +16,8 @@ namespace SdlEngine
 
         private bool IsQuitEventRaised { get; set; }
 
+        private List<KeyValuePair<double, Action>> Callbacks { get; set; } = new List<KeyValuePair<double, Action>>();
+
         public EventManager()
         {
             Initialize();
@@ -71,16 +73,9 @@ namespace SdlEngine
 
         public void HandleEvents()
         {
-            // Shuffle key flags on new frame
-            KeyUp.Clear();
-
-            foreach (SDL.SDL_Keycode keycode in KeyDown)
-            {
-                KeyPressed.Add(keycode);
-            }
-
-            KeyDown.Clear();
-
+            ProcessKeyFlags();
+            ProcessCallbacks();
+ 
             // Now handle events
             SDL.SDL_Event e;
 
@@ -130,6 +125,50 @@ namespace SdlEngine
         public bool IsKeyUp(SDL.SDL_Keycode keycode)
         {
             return KeyUp.Contains(keycode);
+        }
+
+        private void ProcessKeyFlags()
+        {
+            // Shuffle key flags on new frame
+            KeyUp.Clear();
+
+            foreach (SDL.SDL_Keycode keycode in KeyDown)
+            {
+                KeyPressed.Add(keycode);
+            }
+
+            KeyDown.Clear();
+        }
+
+        public void RequestCallback(double callbackDeltaTime, Action callbackAction)
+        {
+            Callbacks.Add(new KeyValuePair<double, Action>(Time.TotalTime + callbackDeltaTime, callbackAction));
+        }
+
+        private void ProcessCallbacks()
+        {
+            int i = 0;
+            while (i < Callbacks.Count)
+            {
+                KeyValuePair<double, Action> callback = Callbacks[i];
+
+                if (Time.TotalTime > callback.Key)
+                {
+                    try
+                    {
+                        callback.Value();
+                    }
+                    finally
+                    {
+                        Callbacks[i] = Callbacks[Callbacks.Count - 1];
+                        Callbacks.RemoveAt(Callbacks.Count - 1);
+                    }
+                }
+                else
+                {
+                    i++;
+                }
+            }
         }
     }
 }

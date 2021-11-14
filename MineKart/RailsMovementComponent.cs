@@ -77,6 +77,8 @@ namespace MineKart
             IsBraking = false;
 
             IsFalling = true;
+
+            // TODO: Start explosion animation
         }
 
         public void StopJumping()

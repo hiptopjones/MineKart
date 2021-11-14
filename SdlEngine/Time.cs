@@ -16,6 +16,7 @@ namespace SdlEngine
         public static double DeltaTime { get; private set; }
         public static long TotalFrames { get; private set; }
         public static double TimeScale { get; set; } = 1;
+        public static bool StepSingleFrame { get; set; }
 
         private static ulong PerformanceFrequency { get; set; }
         private static ulong PreviousPerformanceCounter { get; set; }
@@ -30,9 +31,16 @@ namespace SdlEngine
 
         public static void NextFrame()
         {
+            double timeScale = TimeScale;
+            if (StepSingleFrame)
+            {
+                StepSingleFrame = false;
+                timeScale = 1;
+            }
+
             ulong currentPerformanceCounter = SDL.SDL_GetPerformanceCounter();
 
-            DeltaTime = TimeScale * (currentPerformanceCounter - PreviousPerformanceCounter) / (double)PerformanceFrequency;
+            DeltaTime = timeScale * (currentPerformanceCounter - PreviousPerformanceCounter) / (double)PerformanceFrequency;
             TotalTime += DeltaTime;
 
             TotalFrames++;

@@ -210,7 +210,8 @@ namespace MineKart
 
             BoxColliderComponent boxColliderComponent = new BoxColliderComponent
             {
-                BoundingBox = new Rect3(-1, -0.1, 0, 2, 0.2, 1),
+                // Collider bounding box is shifted 1 segment early to match up with rendering
+                BoundingBox = new Rect3(-1, -0.1, -1, 2, 0.2, 1),
                 Collider = new BoxCollider()
             };
             gameObject.AddComponent(boxColliderComponent);

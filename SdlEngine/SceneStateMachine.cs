@@ -8,19 +8,14 @@ namespace SdlEngine
 {
     public class SceneStateMachine
     {
-        private int NextSceneId { get; set; }
         private Dictionary<int, Scene> SceneMap { get; set; } = new Dictionary<int, Scene>();
 
         private Scene CurrentScene { get; set; }
 
-        public int AddScene(Scene scene)
+        public void AddScene(int sceneId, Scene scene)
         {
-            int sceneId = NextSceneId++;
-
             SceneMap[sceneId] = scene;
             scene.OnCreate();
-
-            return sceneId;
         }
 
         public void SwitchTo(int sceneId)

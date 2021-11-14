@@ -33,5 +33,10 @@ namespace MineKart
 
         public const int SplashScreenTransitionDelay = 1;
         public const string SplashScreenTextureFilePath = "Assets\\splashscreen.png";
+        public const string StartScreenTextureFilePath = "Assets\\startscreen.png";
+        public const string EndScreenTextureFilePath = "Assets\\endscreen.png";
+        public const string PauseScreenTextureFilePath = "Assets\\pausescreen.png";
+
+        public const double EndScreenDelay = 1;
     }
 }
