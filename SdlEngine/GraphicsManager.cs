@@ -105,7 +105,7 @@ namespace SdlEngine
 				Logger.Warn("Linear texture filtering not enabled");
 			}
 
-			WindowHandle = SDL.SDL_CreateWindow(WindowTitle, SDL.SDL_WINDOWPOS_UNDEFINED, SDL.SDL_WINDOWPOS_UNDEFINED, WindowWidth, WindowHeight, SDL.SDL_WindowFlags.SDL_WINDOW_SHOWN);
+			WindowHandle = SDL.SDL_CreateWindow(WindowTitle, SDL.SDL_WINDOWPOS_UNDEFINED, SDL.SDL_WINDOWPOS_UNDEFINED, WindowWidth, WindowHeight, SDL.SDL_WindowFlags.SDL_WINDOW_RESIZABLE);
 			if (WindowHandle == IntPtr.Zero)
 			{
 				throw new Exception($"Unable to create window: {SDL.SDL_GetError()}");
