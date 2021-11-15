@@ -53,10 +53,10 @@ namespace MineKart
         {
             PruneTrack();
 
-            //Debug.DrawText($"Total GameObjects: {SceneObjects.GameObjects.Count}");
-            //Debug.DrawText($"Active: {TrackCollection.TrackSegments.Count}");
-            //Debug.DrawText($"First: {TrackCollection.FirstActiveObjectIndex}");
-            //Debug.DrawText($"Last:  {TrackCollection.LastActiveObjectIndex}");
+            Debug.DrawText($"Total GameObjects: {SceneObjects.GameObjects.Count}");
+            Debug.DrawText($"Active: {TrackCollection.TrackSegments.Count}");
+            Debug.DrawText($"First: {TrackCollection.FirstActiveObjectIndex}");
+            Debug.DrawText($"Last:  {TrackCollection.LastActiveObjectIndex}");
 
             GrowTrack();
         }
