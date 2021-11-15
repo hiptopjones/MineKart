@@ -27,9 +27,9 @@
      showborder="false"
      inkscape:object-paths="true"
      inkscape:snap-global="true"
-     inkscape:zoom="0.32"
-     inkscape:cx="528.125"
-     inkscape:cy="4160.9375"
+     inkscape:zoom="0.64"
+     inkscape:cx="696.875"
+     inkscape:cy="-3739.8438"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
      inkscape:window-x="-8"
@@ -1265,7 +1265,7 @@
        height="480"
        x="-1097.0853"
        y="278.08487"
-       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\startscreen.png"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\start-screen.png"
        inkscape:export-xdpi="25.4"
        inkscape:export-ydpi="25.4" />
     <text
@@ -1275,7 +1275,7 @@
        y="396.15387"
        id="text44624"
        transform="scale(1.13171,0.88361858)"
-       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\startscreen.png"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\start-screen.png"
        inkscape:export-xdpi="25.4"
        inkscape:export-ydpi="25.4"><tspan
          sodipodi:role="line"
@@ -1299,19 +1299,19 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:45.8611px;line-height:1.25;font-family:sans-serif;fill:#fff55e;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="-933.24341"
+       x="-991.12396"
        y="649.27344"
        id="text105954-8"
-       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\startscreen.png"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\start-screen.png"
        inkscape:export-xdpi="25.4"
        inkscape:export-ydpi="25.4"><tspan
          sodipodi:role="line"
          id="tspan105952-7"
          style="font-size:45.8611px;fill:#fff55e;fill-opacity:1;stroke-width:0.264583"
-         x="-933.24341"
-         y="649.27344"><tspan
+         x="-991.12396"
+         y="649.27344">hit <tspan
    style="font-weight:bold;font-size:45.8611px;fill:#fff55e;fill-opacity:1"
-   id="tspan105950-7">space</tspan> to play</tspan></text>
+   id="tspan105950-7">C</tspan> to start game</tspan></text>
     <rect
        style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.1;stroke-opacity:1"
        id="rect105940"
@@ -1319,7 +1319,7 @@
        height="480"
        x="-1097.0853"
        y="826.93658"
-       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\endscreen.png"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\end-screen.png"
        inkscape:export-xdpi="25.4"
        inkscape:export-ydpi="25.4" />
     <text
@@ -1329,7 +1329,7 @@
        y="1113.7072"
        id="text105948"
        transform="scale(1.1170336,0.89522821)"
-       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\endscreen.png"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\end-screen.png"
        inkscape:export-xdpi="25.4"
        inkscape:export-ydpi="25.4"><tspan
          sodipodi:role="line"
@@ -1344,26 +1344,26 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:45.8611px;line-height:1.25;font-family:sans-serif;fill:#fff55e;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="-1012.0134"
-       y="1191.1511"
+       x="-990.38129"
+       y="1215.1218"
        id="text105954"
-       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\endscreen.png"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\end-screen.png"
        inkscape:export-xdpi="25.4"
        inkscape:export-ydpi="25.4"><tspan
          sodipodi:role="line"
          id="tspan105952"
          style="font-size:45.8611px;fill:#fff55e;fill-opacity:1;stroke-width:0.264583"
-         x="-1012.0134"
-         y="1191.1511"><tspan
-   style="font-weight:bold;font-size:45.8611px;fill:#fff55e;fill-opacity:1"
-   id="tspan105950">space</tspan> to play again</tspan></text>
+         x="-990.38129"
+         y="1215.1218">hit <tspan
+   style="font-weight:bold"
+   id="tspan314518">C</tspan> to play again</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:35.2778px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
        x="-1041.2854"
        y="1050.1364"
        id="text110815"
-       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\endscreen.png"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\end-screen.png"
        inkscape:export-xdpi="25.4"
        inkscape:export-ydpi="25.4"><tspan
          sodipodi:role="line"
@@ -1374,26 +1374,26 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:35.2778px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="-933.3446"
-       y="1246.6489"
+       x="-907.03528"
+       y="1263.0193"
        id="text130436"
-       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\endscreen.png"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\end-screen.png"
        inkscape:export-xdpi="25.4"
        inkscape:export-ydpi="25.4"><tspan
          sodipodi:role="line"
          id="tspan130434"
          style="font-size:35.2778px;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
-         x="-933.3446"
-         y="1246.6489"><tspan
+         x="-907.03528"
+         y="1263.0193">hit <tspan
    style="font-weight:bold"
-   id="tspan131614">escape</tspan> for menu</tspan></text>
+   id="tspan313406">X</tspan> for menu</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
        x="-575.67621"
        y="1175.4574"
        id="text137798"
-       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\endscreen.png"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\end-screen.png"
        inkscape:export-xdpi="25.4"
        inkscape:export-ydpi="25.4"><tspan
          sodipodi:role="line"
@@ -1418,7 +1418,7 @@
        x="-562.1864"
        y="743.9809"
        id="text158498"
-       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\startscreen.png"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\start-screen.png"
        inkscape:export-xdpi="25.4"
        inkscape:export-ydpi="25.4"><tspan
          sodipodi:role="line"
@@ -1432,7 +1432,7 @@
        x="-519.54803"
        y="751.14154"
        id="text171606"
-       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\startscreen.png"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\start-screen.png"
        inkscape:export-xdpi="25.4"
        inkscape:export-ydpi="25.4"><tspan
          sodipodi:role="line"
@@ -1444,7 +1444,7 @@
        id="rect189786"
        style="fill:#e9e9e9;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m -1097.0854,-298.29932 v 479.99964 h 640.00023 v -479.99964 z m 322.42119,146.28979 A 218.07522,154.9328 0 0 1 -556.58865,2.9231101 218.07522,154.9328 0 0 1 -774.66421,157.85631 218.07522,154.9328 0 0 1 -992.73927,2.9231101 218.07522,154.9328 0 0 1 -774.66421,-152.00953 Z"
-       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\pausescreen.png"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\pause-screen.png"
        inkscape:export-xdpi="25.4"
        inkscape:export-ydpi="25.4" />
     <text
@@ -1453,7 +1453,7 @@
        x="-867.75201"
        y="-195.38568"
        id="text191806"
-       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\pausescreen.png"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\pause-screen.png"
        inkscape:export-xdpi="25.4"
        inkscape:export-ydpi="25.4"><tspan
          sodipodi:role="line"
@@ -1467,7 +1467,7 @@
        x="-878.1474"
        y="-166.04126"
        id="text208022"
-       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\pausescreen.png"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\pause-screen.png"
        inkscape:export-xdpi="25.4"
        inkscape:export-ydpi="25.4"><tspan
          sodipodi:role="line"
@@ -1789,7 +1789,10 @@
        inkscape:export-ydpi="25.4" />
     <g
        id="g282492"
-       transform="translate(0,840.05208)">
+       transform="translate(0,840.05208)"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\player.png"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4">
       <g
          id="g29224"
          inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\player.png"
@@ -2104,7 +2107,7 @@
        transform="rotate(-90)" />
     <path
        style="fill:#535353;fill-opacity:1;stroke:none;stroke-width:0.26836px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 594.75992,-807.29917 c -79.2529,-31.47016 -179.47331,-52.85527 -261.71868,-73.01078 -31.07523,-15.74952 -59.87763,-38.04205 -96.14254,-38.58938 -38.97178,-5.81416 -78.74865,-5.6134 -117.23143,-14.85183 -21.102926,-5.98482 -33.977589,-25.4727 -35.595366,-38.90524 -10.217462,-32.9378 -67.947278,-9.42016 -71.799204,-49.6542 7.772565,-32.0666 -11.58257583,-68.0226 16.751981,-77.685 260.598619,0.188 482.720929,-0.1729 763.473429,-0.1569 v 292.76956 c -65.61754,0 -157.93744,0.0837 -197.73819,0.0837 z"
+       d="m 594.75992,-807.29917 c -79.2529,-31.47016 -179.47331,-52.85527 -261.71868,-73.01078 -31.07523,-15.74952 -59.87763,-38.04205 -96.14254,-38.58938 -38.97178,-5.81416 -78.74865,-5.6134 -117.23143,-14.85183 -21.102926,-5.98482 -33.977589,-25.4727 -35.595366,-38.90524 -10.217462,-32.9378 -77.3235036,-10.92929 -103.088478,-10.92929 0,-32.66651 -0.192543,-83.23661 -0.192543,-118.74851 260.598627,0.188 530.954727,2.1657 811.707227,2.1817 v 292.76956 c -65.61754,0 -157.93744,0.0837 -197.73819,0.0837 z"
        id="path282923"
        sodipodi:nodetypes="ccccccccccc"
        inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\cliff.png"
@@ -2187,6 +2190,153 @@
        inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\cliff.png"
        inkscape:export-xdpi="25.4"
        inkscape:export-ydpi="25.4" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:35.2778px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-921.65161"
+       y="705.02118"
+       id="text307712"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\start-screen.png"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4"><tspan
+         sodipodi:role="line"
+         id="tspan307710"
+         style="font-size:35.2778px;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         x="-921.65161"
+         y="705.02118">hit <tspan
+   style="font-weight:bold"
+   id="tspan311616">X</tspan> for controls</tspan></text>
+    <rect
+       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.1;stroke-opacity:1"
+       id="rect323722"
+       width="640"
+       height="480"
+       x="-1097.0853"
+       y="1364.3715"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\help-screen.png"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:128.352px;line-height:0.85;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.574518"
+       x="-696.84326"
+       y="1678.7739"
+       id="text323728"
+       transform="scale(1.1170336,0.89522821)"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\help-screen.png"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4"><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:128.352px;font-family:Forte;-inkscape-font-specification:'Forte, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#ff5e5e;fill-opacity:1;stroke-width:0.574518"
+         x="-696.84326"
+         y="1678.7739"
+         rotate="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+         id="tspan323726"><tspan
+           rotate="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+           id="tspan323724"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:128.352px;font-family:Forte;-inkscape-font-specification:'Forte, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#ff5e5e;fill-opacity:1;stroke-width:0.574518">Help!</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:45.8611px;line-height:1.25;font-family:sans-serif;fill:#fff55e;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-942.42554"
+       y="1797.2052"
+       id="text323734"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\help-screen.png"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4"><tspan
+         sodipodi:role="line"
+         id="tspan323732"
+         style="font-size:45.8611px;fill:#fff55e;fill-opacity:1;stroke-width:0.264583"
+         x="-942.42554"
+         y="1797.2052">hit <tspan
+   style="font-weight:bold"
+   id="tspan323730">C</tspan> to return</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:35.2778px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-853.13654"
+       y="1635.8052"
+       id="text323738"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\help-screen.png"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4"><tspan
+         sodipodi:role="line"
+         style="font-size:35.2778px;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         x="-853.13654"
+         y="1635.8052"
+         id="tspan329722"><tspan
+   style="font-weight:bold"
+   id="tspan338070">X</tspan> - brake </tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-569.88843"
+       y="1712.8923"
+       id="text323748"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\help-screen.png"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4"><tspan
+         sodipodi:role="line"
+         id="tspan323746"
+         style="stroke-width:0.264583"
+         x="-569.88843"
+         y="1712.8923">z</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:35.2778px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-848.71417"
+       y="1675.2203"
+       id="text346638"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\help-screen.png"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4"><tspan
+         sodipodi:role="line"
+         id="tspan346636"
+         style="font-size:35.2778px;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         x="-848.71417"
+         y="1675.2203"><tspan
+   style="font-weight:bold"
+   id="tspan361830">C</tspan> - jump</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:14.1111px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-772.56989"
+       y="1553.4205"
+       id="text364966"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\help-screen.png"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4"><tspan
+         sodipodi:role="line"
+         style="font-size:14.1111px;text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         x="-772.56989"
+         y="1553.4205"
+         id="tspan370440">You are on a runaway mine cart.</tspan><tspan
+         sodipodi:role="line"
+         style="font-size:14.1111px;text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         x="-772.56989"
+         y="1571.0594"
+         id="tspan370444">The track is in a state of disrepair, and the locals are unhappy with you.</tspan><tspan
+         sodipodi:role="line"
+         style="font-weight:bold;font-size:14.1111px;text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         x="-770.15833"
+         y="1588.6982"
+         id="tspan377138">Have fun! </tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:35.2778px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-880.5448"
+       y="1715.3693"
+       id="text400567"
+       inkscape:export-filename="C:\Users\hipto\source\repos\SDL\MineKart\MineKart\Assets\help-screen.png"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-ydpi="25.4"><tspan
+         sodipodi:role="line"
+         id="tspan400565"
+         style="font-weight:bold;font-size:35.2778px;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         x="-880.5448"
+         y="1715.3693">Esc<tspan
+   style="font-weight:normal"
+   id="tspan400699"> - pause</tspan></tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"

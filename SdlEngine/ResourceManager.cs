@@ -10,6 +10,8 @@ namespace SdlEngine
 	{
 		private Dictionary<string, Texture> TextureMap { get; set; } = new Dictionary<string, Texture>();
 
+		private Dictionary<string, Sound> SoundMap { get; set; } = new Dictionary<string, Sound>();
+
 		~ResourceManager()
 		{
 			Dispose(isDisposing: false);
@@ -42,13 +44,21 @@ namespace SdlEngine
 		private void TeardownManaged()
 		{
 			List<string> textureFilePaths = TextureMap.Keys.ToList();
-
 			foreach (string textureFilePath in textureFilePaths)
 			{
 				Texture texture = TextureMap[textureFilePath];
 				texture.Dispose();
 
 				TextureMap.Remove(textureFilePath);
+			}
+
+			List<string> soundFilePaths = SoundMap.Keys.ToList();
+			foreach (string soundFilePath in soundFilePaths)
+			{
+				Sound sound = SoundMap[soundFilePath];
+				sound.Dispose();
+
+				SoundMap.Remove(soundFilePath);
 			}
 		}
 
@@ -58,22 +68,40 @@ namespace SdlEngine
 		}
 		#endregion
 
-        public Texture GetTexture(string textureFilePath)
-        {
-            Texture texture;
+		public Texture GetTexture(string textureFilePath)
+		{
+			Texture texture;
 
-            if (false == TextureMap.TryGetValue(textureFilePath, out texture))
-            {
-                texture = Texture.LoadFromFile(textureFilePath);
+			if (false == TextureMap.TryGetValue(textureFilePath, out texture))
+			{
+				texture = Texture.LoadFromFile(textureFilePath);
 				if (texture == null)
-                {
+				{
 					throw new Exception($"Unable to load texture: '{textureFilePath}'");
-                }
+				}
 
-                TextureMap[textureFilePath] = texture;
-            }
+				TextureMap[textureFilePath] = texture;
+			}
 
 			return texture;
-        }
-    }
+		}
+
+		public Sound GetSound(string soundFilePath)
+		{
+			Sound sound;
+
+			if (false == SoundMap.TryGetValue(soundFilePath, out sound))
+			{
+				sound = Sound.LoadFromFile(soundFilePath);
+				if (sound == null)
+				{
+					throw new Exception($"Unable to load sound: '{soundFilePath}'");
+				}
+
+				SoundMap[soundFilePath] = sound;
+			}
+
+			return sound;
+		}
+	}
 }

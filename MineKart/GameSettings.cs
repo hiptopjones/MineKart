@@ -32,16 +32,21 @@ namespace MineKart
         public const int DebugFontSize = 10;
 
         public const int SplashScreenTransitionDelay = 1;
-        public const string SplashScreenTextureFilePath = "Assets\\splashscreen.png";
-        public const string StartScreenTextureFilePath = "Assets\\startscreen.png";
-        public const string EndScreenTextureFilePath = "Assets\\endscreen.png";
-        public const string PauseScreenTextureFilePath = "Assets\\pausescreen.png";
+        public const string SplashScreenTextureFilePath = "Assets\\splash-screen.png";
+        public const string StartScreenTextureFilePath = "Assets\\start-screen.png";
+        public const string HelpScreenTextureFilePath = "Assets\\help-screen.png";
+        public const string EndScreenTextureFilePath = "Assets\\end-screen.png";
+        public const string PauseScreenTextureFilePath = "Assets\\pause-screen.png";
 
         public const string PlayerTextureFilePath = "Assets\\player.png";
         public const string EnemyTextureFilePath = "Assets\\enemy.png";
         public const string RocksTextureFilePath = "Assets\\rocks.png";
         public const string CliffTextureFilePath = "Assets\\cliff.png";
         public const string WarningTextureFilePath = "Assets\\warning.png";
+
+        public const string JumpSoundFilePath = "Assets\\jump.wav";
+        public const string BrakeSoundFilePath = "Assets\\brake.wav";
+        public const string FallSoundFilePath = "Assets\\fall.wav";
 
         public const double EndScreenDelay = 1.3;
     }

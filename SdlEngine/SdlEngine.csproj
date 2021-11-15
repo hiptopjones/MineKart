@@ -70,6 +70,7 @@
     <Compile Include="DrawableSystem.cs" />
     <Compile Include="EventManager.cs" />
     <Compile Include="FollowCameraComponent.cs" />
+    <Compile Include="AudioManager.cs" />
     <Compile Include="FontManager.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="GameObject.cs" />
@@ -89,6 +90,7 @@
     <Compile Include="SDL2-CS\SDL2_mixer.cs" />
     <Compile Include="SDL2-CS\SDL2_ttf.cs" />
     <Compile Include="ServiceLocator.cs" />
+    <Compile Include="Sound.cs" />
     <Compile Include="SpriteComponent.cs" />
     <Compile Include="Texture.cs" />
     <Compile Include="Time.cs" />

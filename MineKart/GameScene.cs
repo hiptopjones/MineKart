@@ -98,7 +98,7 @@ namespace MineKart
             {
                 Name = "Player"
             };
-            player.Transform.Position = new Vector3(0, 1, 4);
+            player.Transform.Position = new Vector3(0, 1, 3);
 
             RailsMovementComponent movementComponent = new RailsMovementComponent
             {
@@ -106,7 +106,10 @@ namespace MineKart
                 BrakeForwardSpeed = 2,
                 JumpInitialSpeed = -20,
                 DeathInitialSpeed = -10,
-                GravityAcceleration = 100
+                GravityAcceleration = 100,
+                JumpSoundFilePath = GameSettings.JumpSoundFilePath,
+                BrakeSoundFilePath = GameSettings.BrakeSoundFilePath,
+                FallSoundFilePath = GameSettings.FallSoundFilePath
             };
             player.AddComponent(movementComponent);
 

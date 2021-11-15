@@ -11,7 +11,7 @@ namespace SdlEngine
     public class KeyDelayScene : Scene
     {
         public string TextureFilePath { get; set; }
-        public Dictionary<SDL.SDL_Keycode, int> TransitionMap { get; set; }
+        public List<KeyValuePair<SDL.SDL_Keycode, int>> TransitionMap { get; set; }
         public double TransitionDelayTime { get; set; } = 0.25;
 
         private Texture Texture { get; set; }
@@ -59,11 +59,11 @@ namespace SdlEngine
 
         public override void Update()
         {
-            foreach (SDL.SDL_Keycode keycode in TransitionMap.Keys)
+            foreach (KeyValuePair<SDL.SDL_Keycode, int> pair in TransitionMap)
             {
-                if (EventManager.IsKeyDown(keycode))
+                if (EventManager.IsKeyDown(pair.Key))
                 {
-                    int transitionSceneId = TransitionMap[keycode];
+                    int transitionSceneId = pair.Value;
                     EventManager.RequestCallback(TransitionDelayTime, () => { SceneManager.SwitchTo(transitionSceneId); });
                 }
             }

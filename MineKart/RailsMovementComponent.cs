@@ -16,6 +16,10 @@ namespace MineKart
         public double DeathInitialSpeed { get; set; }
         public double GravityAcceleration { get; set; }
 
+        public string JumpSoundFilePath { get; set; }
+        public string BrakeSoundFilePath { get; set; }
+        public string FallSoundFilePath { get; set; }
+
         public bool IsBraking { get; set; }
         public bool IsJumping { get; set; }
         public bool IsFalling { get; set; }
@@ -23,6 +27,9 @@ namespace MineKart
         public double CurrentVerticalSpeed { get; set; }
 
         private EventManager EventManager { get; set; }
+        private Sound JumpSound { get; set; }
+        private Sound BrakeSound { get; set; }
+        private Sound FallSound { get; set; }
 
         public override void Awake()
         {
@@ -30,6 +37,30 @@ namespace MineKart
             if (EventManager == null)
             {
                 throw new Exception($"Unable to retrieve event manager from service locator");
+            }
+
+            ResourceManager resourceManager = ServiceLocator.Instance.GetService<ResourceManager>();
+            if (resourceManager == null)
+            {
+                throw new Exception($"Unable to retrieve resource manager from service locator");
+            }
+
+            JumpSound = resourceManager.GetSound(JumpSoundFilePath);
+            if (JumpSound == null)
+            {
+                throw new Exception($"Unable to load jump sound from file");
+            }
+
+            BrakeSound = resourceManager.GetSound(BrakeSoundFilePath);
+            if (BrakeSound == null)
+            {
+                throw new Exception($"Unable to load brake sound from file");
+            }
+
+            FallSound = resourceManager.GetSound(FallSoundFilePath);
+            if (FallSound == null)
+            {
+                throw new Exception($"Unable to load fall sound from file");
             }
         }
 
@@ -45,12 +76,23 @@ namespace MineKart
             }
             else
             {
-                IsBraking = EventManager.IsKeyPressed(SDL.SDL_Keycode.SDLK_x) || EventManager.IsKeyPressed(SDL.SDL_Keycode.SDLK_DOWN);
+                if (EventManager.IsKeyPressed(SDL.SDL_Keycode.SDLK_x) || EventManager.IsKeyPressed(SDL.SDL_Keycode.SDLK_DOWN))
+                {
+                    IsBraking = true;
+                    BrakeSound.Play(0);
+                }
+                else
+                {
+                    IsBraking = false;
+                }
 
                 if (EventManager.IsKeyPressed(SDL.SDL_Keycode.SDLK_c) || EventManager.IsKeyPressed(SDL.SDL_Keycode.SDLK_UP))
                 {
                     IsJumping = true;
                     velocity.Y = JumpInitialSpeed;
+
+                    // Should this happen here?
+                    JumpSound.Play();
                 }
             }
 
@@ -87,6 +129,8 @@ namespace MineKart
 
             IsFalling = true;
             CurrentVerticalSpeed = DeathInitialSpeed;
+
+            FallSound.Play();
         }
 
         public void StopJumping()

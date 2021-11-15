@@ -82,7 +82,7 @@ namespace SdlEngine
 				WindowHandle = IntPtr.Zero;
 			}
 
-			SDL.SDL_Quit();
+			SDL.SDL_QuitSubSystem(SDL.SDL_INIT_VIDEO);
 		}
 		#endregion
 

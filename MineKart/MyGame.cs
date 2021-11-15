@@ -12,6 +12,7 @@ namespace MineKart
     {
         SplashScreen,
         StartScreen,
+        HelpScreen,
         GameScreen,
         EndScreen
     };
@@ -19,6 +20,7 @@ namespace MineKart
     class MyGame : Game, IDisposable
     {
         private GraphicsManager GraphicsManager { get; set; }
+        private AudioManager AudioManager { get; set; }
         private EventManager EventManager { get; set; }
         private ResourceManager ResourceManager { get; set; }
         private FontManager FontManager { get; set; }
@@ -93,6 +95,9 @@ namespace MineKart
             GraphicsManager = new GraphicsManager(GameSettings.WindowTitle, GameSettings.RenderWidth, GameSettings.RenderHeight, GameSettings.WindowWidth, GameSettings.WindowHeight);
             ServiceLocator.Instance.ProvideService<GraphicsManager>(GraphicsManager);
 
+            AudioManager = new AudioManager();
+            ServiceLocator.Instance.ProvideService<AudioManager>(AudioManager);
+            
             EventManager = new EventManager();
             ServiceLocator.Instance.ProvideService<EventManager>(EventManager);
 
@@ -112,12 +117,24 @@ namespace MineKart
             KeyDelayScene startScene = new KeyDelayScene
             {
                 TextureFilePath = GameSettings.StartScreenTextureFilePath,
-                TransitionMap = new Dictionary<SDL.SDL_Keycode, int>
+                TransitionMap = new List<KeyValuePair<SDL.SDL_Keycode, int>>
                 {
-                    { SDL.SDL_Keycode.SDLK_SPACE, (int)SceneType.GameScreen }
+                    new KeyValuePair<SDL.SDL_Keycode, int>(SDL.SDL_Keycode.SDLK_c, (int)SceneType.GameScreen),
+                    new KeyValuePair<SDL.SDL_Keycode, int>(SDL.SDL_Keycode.SDLK_x, (int)SceneType.HelpScreen)
                 }
             };
             SceneManager.AddScene((int)SceneType.StartScreen, startScene);
+
+            KeyDelayScene helpScene = new KeyDelayScene
+            {
+                TextureFilePath = GameSettings.HelpScreenTextureFilePath,
+                TransitionMap = new List<KeyValuePair<SDL.SDL_Keycode, int>>
+                {
+                    new KeyValuePair<SDL.SDL_Keycode, int>(SDL.SDL_Keycode.SDLK_c, (int)SceneType.StartScreen),
+                    new KeyValuePair<SDL.SDL_Keycode, int>(SDL.SDL_Keycode.SDLK_x, (int)SceneType.StartScreen)
+                }
+            };
+            SceneManager.AddScene((int)SceneType.HelpScreen, helpScene);
 
             // TODO: Pass in the end screen scene ID?
             GameScene gameScene = new GameScene();
@@ -126,10 +143,10 @@ namespace MineKart
             KeyDelayScene endScene = new KeyDelayScene
             {
                 TextureFilePath = GameSettings.EndScreenTextureFilePath,
-                TransitionMap = new Dictionary<SDL.SDL_Keycode, int>
+                TransitionMap = new List<KeyValuePair<SDL.SDL_Keycode, int>>
                 {
-                    { SDL.SDL_Keycode.SDLK_SPACE, (int)SceneType.GameScreen },
-                    { SDL.SDL_Keycode.SDLK_ESCAPE, (int)SceneType.StartScreen }
+                    new KeyValuePair<SDL.SDL_Keycode, int>(SDL.SDL_Keycode.SDLK_c, (int)SceneType.GameScreen),
+                    new KeyValuePair<SDL.SDL_Keycode, int>(SDL.SDL_Keycode.SDLK_x, (int)SceneType.StartScreen)
                 }
             };
             SceneManager.AddScene((int)SceneType.EndScreen, endScene);
