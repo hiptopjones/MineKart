@@ -139,6 +139,16 @@ namespace MineKart
             PlayerCollisionHandlerComponent collisionHandlerComponent = new PlayerCollisionHandlerComponent();
             player.AddComponent(collisionHandlerComponent);
 
+            //SubdividingExplosionComponent explosionComponent = new SubdividingExplosionComponent
+            //{
+            //    MaxSpeed = 25,
+            //    MinSpeed = 20,
+            //    NumSplits = 2,
+            //    GravityAcceleration = 200,
+            //    TextureFilePath = GameSettings.PlayerTextureFilePath
+            //};
+            //player.AddComponent(explosionComponent);
+
             ExplosionSpawnerComponent explosionComponent = new ExplosionSpawnerComponent
             {
                 NumRocks = 200,

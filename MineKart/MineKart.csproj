@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EnemySpawnerComponent.cs" />
+    <Compile Include="SubdividingExplosionComponent.cs" />
     <Compile Include="ExplosionSpawnerComponent.cs" />
     <Compile Include="RailsMovementComponent.cs" />
     <Compile Include="CommandLineOptions.cs" />

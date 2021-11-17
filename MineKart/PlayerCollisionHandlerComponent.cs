@@ -69,6 +69,12 @@ namespace MineKart
                 {
                     ExplosionSpawnerComponent explosionComponent = Owner.GetComponent<ExplosionSpawnerComponent>();
                     explosionComponent.StartSpawning();
+
+                    //SpriteComponent spriteComponent = Owner.GetComponent<SpriteComponent>();
+                    //spriteComponent.IsEnabled = false;
+
+                    //SubdividingExplosionComponent explosionComponent = Owner.GetComponent<SubdividingExplosionComponent>();
+                    //explosionComponent.StartSpawning();
                 }
 
                 // After some delay, go to end screen

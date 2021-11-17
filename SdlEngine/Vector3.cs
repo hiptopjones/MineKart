@@ -59,6 +59,15 @@ namespace SdlEngine
             Z = other.Z;
         }
 
+        public static Vector3 FromPolar(double radius, double thetaRadians)
+        {
+            return new Vector3
+            {
+                X = radius * Math.Cos(thetaRadians),
+                Y = radius * Math.Sin(thetaRadians)
+            };
+        }
+
         public static Vector3 operator +(Vector3 a) => a;
         public static Vector3 operator -(Vector3 a)
         {

@@ -10,6 +10,8 @@ namespace SdlEngine
     {
         public GameObject Owner { get; set; }
 
+        public bool IsEnabled { get; set; } = true;
+
         public virtual void Awake()
         {
 

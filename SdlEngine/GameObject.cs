@@ -59,6 +59,7 @@ namespace SdlEngine
         {
             foreach (Component component in Components)
             {
+                // TODO: Check IsEnabled?
                 component.Awake();
             }
         }
@@ -68,6 +69,7 @@ namespace SdlEngine
         {
             foreach (Component component in Components)
             {
+                // TODO: Check IsEnabled?
                 component.Start();
             }
         }
@@ -76,7 +78,10 @@ namespace SdlEngine
         {
             foreach (Component component in Components)
             {
-                component.Update();
+                if (component.IsEnabled)
+                {
+                    component.Update();
+                }
             }
         }
 
@@ -84,16 +89,22 @@ namespace SdlEngine
         {
             foreach (Component component in Components)
             {
-                component.LateUpdate();
+                if (component.IsEnabled)
+                {
+                    component.LateUpdate();
+                }
             }
         }
 
         public virtual void Render()
         {
-            // TODO: This feels expensive to do on every frame whe most components only have one drawable
+            // TODO: This GetComponents() call feels expensive to do on every frame whe most components only have one drawable
             foreach (DrawableComponent drawableComponent in GetComponents<DrawableComponent>())
             {
-                drawableComponent.Render();
+                if (drawableComponent.IsEnabled)
+                {
+                    drawableComponent.Render();
+                }
             }
         }
 
