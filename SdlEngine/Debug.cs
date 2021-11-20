@@ -94,6 +94,7 @@ namespace SdlEngine
         {
             if (IsEnabled)
             {
+                Debug.DrawText($"Texture Renders: {Texture.RenderCount}");
                 foreach (Action<IntPtr> frameAction in FrameActions)
                 {
                     frameAction(GraphicsManager.RendererHandle);
@@ -106,6 +107,7 @@ namespace SdlEngine
         private static void PrepareForNextFrame()
         {
             FrameActions.Clear();
+            Texture.RenderCount = 0;
             CurrentTextPosition = StartingTextPosition;
         }
     }

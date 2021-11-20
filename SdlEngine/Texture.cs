@@ -11,6 +11,7 @@ namespace SdlEngine
     // TODO: Take a look at SFML texture / sprite for structural / functional ideas
     public class Texture : IDisposable
     {
+        public static int RenderCount { get; set; }
         public int Width { get; set; }
         public int Height { get; set; }
 
@@ -153,6 +154,8 @@ namespace SdlEngine
         // Draws the whole texture to the origin of the target renderer, stretching to fit
         public void Render(IntPtr rendererHandle)
         {
+            RenderCount++;
+
             SDL.SDL_RenderCopy(rendererHandle, TextureHandle, IntPtr.Zero, IntPtr.Zero);
         }
 
@@ -165,6 +168,8 @@ namespace SdlEngine
         // Draws the whole texture to the target position, stretching by scale
         public void Render(IntPtr rendererHandle, SDL.SDL_Point targetPosition, double scale)
         {
+            RenderCount++;
+
             SDL.SDL_Rect targetRect = new SDL.SDL_Rect
             {
                 x = targetPosition.x,
@@ -179,6 +184,8 @@ namespace SdlEngine
         // Draws the part of the texture specified by sourceRect to targetRect, flipping horizontally if specified, stretching to fit
         public void Render(IntPtr rendererHandle, SDL.SDL_Rect sourceRect, SDL.SDL_Rect targetRect, bool isFlipped)
         {
+            RenderCount++;
+
             SDL.SDL_RendererFlip flip = isFlipped ? SDL.SDL_RendererFlip.SDL_FLIP_HORIZONTAL : SDL.SDL_RendererFlip.SDL_FLIP_NONE;
             SDL.SDL_RenderCopyEx(rendererHandle, TextureHandle, ref sourceRect, ref targetRect, 0, IntPtr.Zero, flip);
         }
@@ -186,6 +193,8 @@ namespace SdlEngine
         // Draws the part of the texture specified by sourceRect to targetRect, rotating by angleDegrees, stretching to fit
         public void Render(IntPtr rendererHandle, SDL.SDL_Rect sourceRect, SDL.SDL_Rect targetRect, double angleDegrees)
         {
+            RenderCount++;
+
             SDL.SDL_RenderCopyEx(rendererHandle, TextureHandle, ref sourceRect, ref targetRect, angleDegrees, IntPtr.Zero, SDL.SDL_RendererFlip.SDL_FLIP_NONE);
         }
 
